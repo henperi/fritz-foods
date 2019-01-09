@@ -1,10 +1,9 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
-import Header from "../ui/Header";
-import Footer from "../ui/Footer";
-import { LoadingSpinner } from "../ui/LoadingSpinner";
-import { DefaultFood } from "../ui/FoodCard";
-import { ViewMore } from "../ui/ViewMore";
+import React from 'react';
+import Header from '../ui/Header';
+import Footer from '../ui/Footer';
+import LoadingSpinner from '../ui/LoadingSpinner';
+import { DefaultFood } from '../ui/FoodCard';
+import { ViewMore } from '../ui/ViewMore';
 
 const MenuPage = () => (
   <div>
