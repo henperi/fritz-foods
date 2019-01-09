@@ -1,0 +1,90 @@
+import React from "react";
+import Header from "../ui/Header";
+import Footer from "../ui/Footer";
+
+const CartPage = () => {
+  return (
+    <div>
+      <Header />
+      <main className="main-content">
+        <section className="m-t-40 text-center">
+          <h2 className="setup-page hide t-40">
+            Loading... <i className="fa fa-spin fa-spinner" />{" "}
+          </h2>
+        </section>
+
+        <div className="container hideX">
+          <section className="card text-center">
+            <h2 className="">
+              My Cart
+              <a className="link">
+                (<span className="cart-count">2</span> Items)
+              </a>
+            </h2>
+            <div className="card card-shadow">
+              <div className="table">
+                <table>
+                  <thead className="">
+                    <tr>
+                      <th>Food Name</th>
+                      <th>Unit Price</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody />
+                </table>
+              </div>
+            </div>
+            <div className="text-center contain-50">
+              <div className="response-area" />
+              <div className="hide loader">
+                <i className="fa fa-spinner fa-spin" />
+              </div>
+              <button
+                className="btn btn-green btn-bg btn-rounded btn-block triggerModal placeOrderModal"
+                data-target="placeOrderModal"
+              >
+                Place Order
+              </button>
+
+              <div className="modal" id="#placeOrderModal">
+                <div className="modal-content">
+                  <div className="text-center">
+                    <span className="close-button btn btn-primary btn-sm push-right">
+                      x
+                    </span>
+                    <h2 className="text-center">
+                      You are about to place an order
+                    </h2>
+                    <form
+                      action="javascript:;"
+                      method="POST"
+                      className=" card card-shadow"
+                    >
+                      <div className="">
+                        <h3>
+                          Are you sure you want to order all the items in cart?
+                        </h3>
+                        <button className="btn btn-green btn-rounded btn-bg place-order">
+                          Proceed
+                        </button>
+                        <button className="close-button btn btn-primary btn-rounded btn-bg">
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default CartPage;
