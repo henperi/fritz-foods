@@ -1,12 +1,14 @@
-import React from "react";
+import React from 'react';
 
-export const Hero = () => (
+import { NavLink } from 'react-router-dom';
+
+const Hero = () => (
   <div className="hero">
     <div className="contain text-center">
       <h1 className="">Welcome To Fast Food Fast</h1>
       <p>
-        The best food ordering app. Order afordable food items, drinks, pastries
-        and African dishes to your door step instantly!
+        The best food ordering app. Order afordable food items, drinks, pastries and African dishes
+        to your door step instantly!
       </p>
       <form className="form-data" method="GET">
         <div className="form-member">
@@ -16,16 +18,16 @@ export const Hero = () => (
             className="form-input transparent text-center hero-input"
             placeholder="Search foods and dishes"
           />
-          <a>
-            <button name="search" className="btn btn-primary">
-              Search Food
-            </button>
-          </a>
-          <a href="foods-menu.html" className="btn btn-blue">
+          <button type="button" name="search" className="btn btn-primary">
+            Search Food
+          </button>
+          <NavLink to="/foods-menu" className="btn btn-blue">
             Our Menu
-          </a>
+          </NavLink>
         </div>
       </form>
     </div>
   </div>
 );
+
+export default Hero;

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const CartSlider1 = () => (
   <div className="cart card-shadow text-center">
@@ -11,7 +11,9 @@ export const CartSlider1 = () => (
       My Cart
     </div>
     <div className="card text-inverse">
-      <span className="cart-count">6</span> Items added
+      <span className="cart-count">6</span>
+      {' '}
+Items added
     </div>
     <div className="container">
       <a href="my-cart.html" className="btn btn-sm btn-green">
@@ -20,3 +22,5 @@ export const CartSlider1 = () => (
     </div>
   </div>
 );
+
+export const CartSlider2 = () => {};

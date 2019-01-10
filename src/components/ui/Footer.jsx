@@ -1,5 +1,5 @@
-import React from "react";
-import { CartSlider1 } from "./CartSlider";
+import React from 'react';
+import { CartSlider1 } from './CartSlider';
 
 const Footer = () => (
   <div>

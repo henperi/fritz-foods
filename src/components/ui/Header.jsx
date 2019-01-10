@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => (
   <header>
@@ -21,10 +21,16 @@ const Header = () => (
         <NavLink to="/signup">Signup</NavLink>
         <NavLink className="btn btn-green" to="/users/my-cart">
           My Cart
-          <i className="fa fa-shopping-cart" />{" "}
+          <i className="fa fa-shopping-cart" />
           <span className="count cart-count">0</span>
         </NavLink>
-        <a href="javascript:void(0);" className="icon">
+        <a
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+          href="/open"
+          className="icon"
+        >
           &#9776;
         </a>
       </div>

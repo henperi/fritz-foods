@@ -67,7 +67,6 @@ exports[`should render Header correctly 1`] = `
         <i
           className="fa fa-shopping-cart"
         />
-         
         <span
           className="count cart-count"
         >
@@ -76,7 +75,8 @@ exports[`should render Header correctly 1`] = `
       </NavLink>
       <a
         className="icon"
-        href="javascript:void(0);"
+        href="/open"
+        onClick={[Function]}
       >
         ☰
       </a>
