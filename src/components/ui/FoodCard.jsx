@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TriggerModal from './TriggerModal';
 
 export const DefaultFood = () => (
   <div className="food-item card card-shadow">
@@ -27,9 +28,15 @@ export const DefaultFood = () => (
           Order Now
         </button>
       </a>
-      <button type="button" className="triggerModal btn btn-blue" data-target="cartModal">
-        Add to Cart
-      </button>
+
+      <TriggerModal
+        type="addToCart"
+        id="qwe2323"
+        title="Food Ma"
+        price="500"
+        triggerClass="btn btn-blue"
+        triggerName="Add To Cart"
+      />
 
       <div className="modal" id="#cartModal">
         <div className="modal-content">
