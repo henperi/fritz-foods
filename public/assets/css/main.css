@@ -236,6 +236,14 @@ main {
   /* font-weight: 400; */
 }
 
+/*
+  Background Colours
+*/
+.bg-blue {
+  background-color: #2694ee;
+  color: white;
+}
+
 /* =========================================================== 
 |  Every Thing Text
 /* =========================================================== */

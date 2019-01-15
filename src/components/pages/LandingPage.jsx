@@ -5,6 +5,8 @@ import { DefaultFood } from '../ui/FoodCard';
 import Hero from '../ui/Hero';
 import AboutCard from '../ui/AboutCard';
 import ContactCard from '../ui/ContactCard';
+import Glow from '../ui/Glow';
+import TriggerModal from '../ui/TriggerModal';
 
 const LandingPage = () => (
   <div>
@@ -14,12 +16,8 @@ const LandingPage = () => (
       <div className="p-h-5 text-center">
         <p>To enjoy amazing discounts and have a fun filled experience, login to your account!</p>
         <div>
-          <a href="signin.html" className="btn btn-green">
-            Login Now!
-          </a>
-          <a href="signup.html" className="btn btn-blue">
-            Signup Now!
-          </a>
+          <TriggerModal type="signUpModal" triggerClass="btn btn-green" triggerName="Login Now!" />
+          <TriggerModal type="signUpModal" triggerClass="btn btn-blue" triggerName="Signup Now!" />
         </div>
       </div>
 
