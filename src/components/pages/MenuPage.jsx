@@ -4,7 +4,7 @@ import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 import LoadingSpinner from '../ui/LoadingSpinner';
 import { DefaultFood } from '../ui/FoodCard';
-import { ViewMore } from '../ui/ViewMore';
+import { ViewMore1 } from '../ui/ViewMore';
 import { getMenu } from '../../actions/menuActions';
 
 class MenuPage extends Component {
@@ -41,7 +41,7 @@ class MenuPage extends Component {
                   <DefaultFood key={singleFood.food_id} {...singleFood} />
                 ))}
               </div>
-              <ViewMore />
+              <ViewMore1 />
             </section>
           </div>
         </main>
