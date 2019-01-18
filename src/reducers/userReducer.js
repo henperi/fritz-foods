@@ -1,15 +1,26 @@
+import { SIGNUP_USER, SET_AUTH_USER, REMOVE_AUTH_USER } from '../actions/actionTypes';
+
 const userDefaultState = {
   userId: undefined,
   userToken: undefined,
   fullname: undefined,
-  email: undefined,
+  role: undefined,
+  isAuthenticated: false,
 };
 
 const userReducer = (state = userDefaultState, action) => {
   switch (action.type) {
-    case 'SET_AUTH_USER':
+    case SIGNUP_USER:
       return {
-        ...action.user,
+        ...action.payload,
+      };
+    case SET_AUTH_USER:
+      return {
+        ...action.payload,
+      };
+    case REMOVE_AUTH_USER:
+      return {
+        ...action.payload,
       };
     case 'SET_USER_TOKEN':
       return {

@@ -1,85 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import TriggerModal from './TriggerModal';
 
-export const DefaultFood = () => (
+export const DefaultFood = props => (
   <div className="food-item card card-shadow">
     <div className="flex">
       <div className="image-div">
-        <img alt="" src=" ../img/food-items/1.jpg" className="image" width="100%" />
+        <img alt="" src="../img/food-items/1.jpg" className="image" width="100%" />
       </div>
       <div className="content-div">
         <div className="item-title">
-          Chicken Stew and Rice -
-          <span className="badge price">&#8358;3,500</span>
+          {props.food_name}
+          <span className="badge price">
+            &#8358;
+            {props.unit_price}
+          </span>
         </div>
         <div className="item-subtitle">
-          <Link to="/">Cooked Foods</Link>
+          <Link to="/">{props.food_cat}</Link>
         </div>
-        <div className="item-description">
-          qwewdsc asdfefedv ewdscvev dsfedv ewdvewv svewvfd ewfsfev fvdcvev vre
-        </div>
+        <div className="item-description">{props.description}</div>
         <span className="item-description link">More Details</span>
       </div>
     </div>
     <div>
-      <a href="order-now.html">
-        <button type="button" className="btn btn-primary">
-          Order Now
-        </button>
-      </a>
+      <NavLink to={`/users/foods/${props.food_id}`} className="btn btn-primary">
+        Order Now
+      </NavLink>
 
       <TriggerModal
         type="addToCart"
-        id="qwe2323"
-        title="Food Ma"
-        price="500"
+        id={props.food_id}
+        title={props.food_name}
+        price={props.unit_price}
         triggerClass="btn btn-blue"
         triggerName="Add To Cart"
+        {...props}
       />
-
-      <div className="modal" id="#cartModal">
-        <div className="modal-content">
-          <div className="text-center">
-            <span className="close-button btn btn-primary btn-sm push-right">x</span>
-            <h2 className="text-center">Add this food item to existing Cart</h2>
-
-            <div className="content-div">
-              <div className="item-title">
-                Chicken Stew and Rice -
-                <span className="badge price">&#8358;3,500</span>
-              </div>
-              <div className="item-description">
-                <p>
-                  qwewdsc asdfefedv ewdscvev dsfedv ewdvewv svewvfd ewfsfev fvdcvev vre asc eqwewdsc
-                  asdfefedv ewdscvev dsfedv ewdvewv svewvfd ewfsfev fvdcvev vres
-                </p>
-              </div>
-            </div>
-            <form onSubmit={() => {}} method="POST" className=" card card-shadow">
-              <div className="flex">
-                <h2>Desired Quantity</h2>
-                <div className="form-member text-left">
-                  <input
-                    type="number"
-                    className="form-input"
-                    placeholder="Enter Desired Quantity example 3"
-                  />
-                </div>
-                <button type="button" className="btn btn-blue btn-block btn-rounded btn-bg">
-                  Add To Cart
-                </button>
-              </div>
-            </form>
-            <button
-              type="button"
-              className="close-button btn btn-primary btn-block btn-rounded btn-bg"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 );

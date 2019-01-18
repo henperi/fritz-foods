@@ -683,6 +683,9 @@ section {
 .t-28 {
   font-size: 28px;
 }
+.fs-10 {
+  font-size: 10px;
+}
 .fs-20 {
   font-size: 20px;
 }
@@ -746,14 +749,15 @@ section {
   display: block;
   padding: 10px 15px;
   border: 0.5px solid lightgrey;
+  border-radius: 5px;
   margin-bottom: -1px;
 }
-.list-item:first-child {
+/* .list-item:first-child {
   border-radius: 5px 5px 0px 0px;
 }
 .list-item:last-child {
   border-radius: 0px 0px 5px 5px;
-}
+} */
 .flash {
   /* flex-flow: column; */
   position: fixed;
@@ -779,6 +783,15 @@ section {
 .flash-error {
   background-color: rgb(243, 39, 39);
   color: white;
+}
+
+.error {
+  background-color: rgb(255, 226, 226);
+  color: red;
+}
+
+.list-item.error {
+  font-size: 12px;
 }
 
 .setup-page {
