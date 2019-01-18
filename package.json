@@ -10,9 +10,11 @@
     "build": "webpack --watch",
     "dev-server": "webpack-dev-server --open --hot"
   },
+  "proxy": "http://localhost:5000/api/v1",
   "author": "Henry Izontimi",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
@@ -36,6 +38,7 @@
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.6.2",
     "raf": "^3.4.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -44,6 +47,7 @@
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.7.0",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.2",

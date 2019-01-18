@@ -5,7 +5,6 @@ import { DefaultFood } from '../ui/FoodCard';
 import Hero from '../ui/Hero';
 import AboutCard from '../ui/AboutCard';
 import ContactCard from '../ui/ContactCard';
-import Glow from '../ui/Glow';
 import TriggerModal from '../ui/TriggerModal';
 
 const LandingPage = () => (

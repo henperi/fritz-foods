@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AboutCard correctly 1`] = `
+<div
+  className="flex-item card"
+  id="about"
+>
+  <h2>
+    About Fast Food Fast
+  </h2>
+  <p
+    className="text-simple"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora! Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!
+  </p>
+  <p
+    className="text-simple"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora! Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!
+  </p>
+  <p
+    className="text-simple"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora! Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in sequi incidunt tempora!
+  </p>
+</div>
+`;

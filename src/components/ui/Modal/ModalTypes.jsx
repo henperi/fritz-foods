@@ -4,7 +4,7 @@ export const AddToCartModal = (props) => {
   const {
     title, price, description, handleModal,
   } = props;
-
+  console.log('insideAddToCart', props);
   return (
     <div>
       <h2 className="text-center">Add this food item to existing Cart</h2>

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Modal correctly 1`] = `
+<div
+  className="modal undefined"
+>
+  <div
+    className="modal-content"
+  >
+    <div
+      className="text-center"
+    >
+      <button
+        className="close-button btn btn-sm push-right fs-20"
+        type="button"
+      >
+        x
+      </button>
+    </div>
+  </div>
+</div>
+`;

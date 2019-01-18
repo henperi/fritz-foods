@@ -17,7 +17,6 @@ class TriggerModal extends Component {
   ) => {
     event.preventDefault();
     if (event.target.classList.contains('triggerModal')) {
-      // add the modal to state
       return this.setState(() => ({
         modal: {
           isOpen: true,
@@ -30,7 +29,6 @@ class TriggerModal extends Component {
       }));
     }
     if (event.target.classList.contains('close-button')) {
-      // remove the modal from this.state.
       return this.setState(() => ({
         modal: {
           isOpen: false,
@@ -40,19 +38,16 @@ class TriggerModal extends Component {
     return null;
   };
 
-  // console.log(isOpen)
-
   render() {
+    const { triggerClass, triggerName } = this.props;
+    const { modal } = this.state;
+    console.log(this.props);
     return (
       <span>
-        <button
-          onClick={this.handleModal}
-          type="button"
-          className={`triggerModal ${this.props.triggerClass}`}
-        >
-          {this.props.triggerName}
+        <button onClick={this.handleModal} type="button" className={`triggerModal ${triggerClass}`}>
+          {triggerName}
         </button>
-        <Modal {...this.state.modal} handleModal={this.handleModal} />
+        <Modal {...modal} handleModal={this.handleModal} />
       </span>
     );
   }

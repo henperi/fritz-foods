@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TriggerModal correctly 1`] = `
+<span>
+  <button
+    className="triggerModal undefined"
+    onClick={[Function]}
+    type="button"
+  />
+  <modal
+    handleModal={[Function]}
+    isOpen={false}
+  />
+</span>
+`;
