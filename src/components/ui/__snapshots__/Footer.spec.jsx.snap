@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div>
+  <CartSlider1 />
+  <footer
+    className="footer text-center"
+  >
+    <div>
+      Fast Food Fast. © All Rights Reserved
+    </div>
+  </footer>
+</div>
+`;

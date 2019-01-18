@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div
+  className="food-item card card-shadow"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="image-div"
+    >
+      <img
+        alt=""
+        className="image"
+        src="../img/food-items/1.jpg"
+        width="100%"
+      />
+    </div>
+    <div
+      className="content-div"
+    >
+      <div
+        className="item-title"
+      >
+        <span
+          className="badge price"
+        >
+          ₦
+        </span>
+      </div>
+      <div
+        className="item-subtitle"
+      >
+        <Link
+          replace={false}
+          to="/"
+        />
+      </div>
+      <div
+        className="item-description"
+      />
+      <span
+        className="item-description link"
+      >
+        More Details
+      </span>
+    </div>
+  </div>
+  <div>
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
+      className="btn btn-primary"
+      to="/users/foods/undefined"
+    >
+      Order Now
+    </NavLink>
+    <TriggerModal
+      triggerClass="btn btn-blue"
+      triggerName="Add To Cart"
+      type="addToCart"
+    />
+  </div>
+</div>
+`;

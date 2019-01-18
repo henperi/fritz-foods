@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div
+  className="flex-item card"
+  id="contact"
+>
+  <h2>
+    Contact Us
+  </h2>
+  <form
+    className="form-data container"
+  >
+    <div
+      className="form-member text-left"
+    >
+      <label
+        htmlFor="fullname"
+      >
+        Full Name
+        <input
+          className="form-input"
+          id="fullname"
+          placeholder="Enter Fullname"
+          type="text"
+        />
+      </label>
+    </div>
+    <div
+      className="form-member text-left"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+        <input
+          className="form-input"
+          placeholder="Enter Email"
+          type="email"
+        />
+      </label>
+    </div>
+    <div
+      className="form-member text-left"
+    >
+      <label
+        htmlFor="messafe"
+      >
+        Message
+        <textarea
+          cols="8"
+          id="message"
+          name=""
+          placeholder="Type a message"
+          rows="10"
+        />
+      </label>
+    </div>
+    <button
+      className="btn btn-blue btn-block btn-rounded btn-bg"
+      type="button"
+    >
+      Contact Us
+    </button>
+  </form>
+</div>
+`;
