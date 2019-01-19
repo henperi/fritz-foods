@@ -26,9 +26,9 @@ exports[`should render CartSlider correctly 1`] = `
     <span
       className="cart-count"
     >
-      6
+      0
+       
     </span>
-     
     Items added
   </div>
   <div
