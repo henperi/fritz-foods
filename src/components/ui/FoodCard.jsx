@@ -12,7 +12,7 @@ export const DefaultFood = props => (
         <div className="item-title">
           {props.food_name}
           <span className="badge price">
-            &#8358;
+              &#8358;
             {props.unit_price}
           </span>
         </div>
@@ -25,7 +25,7 @@ export const DefaultFood = props => (
     </div>
     <div>
       <NavLink to={`/users/foods/${props.food_id}`} className="btn btn-primary">
-        Order Now
+          Order Now
       </NavLink>
 
       <TriggerModal

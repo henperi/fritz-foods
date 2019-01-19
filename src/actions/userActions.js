@@ -72,7 +72,6 @@ export const signupUser = (userData = {}, history) => (dispatch) => {
 };
 
 export const loginUser = (userData = {}, history) => (dispatch) => {
-  console.log(userData);
   // axios
   //   .post(loginUrl, userData)
   fetch(loginUrl, {

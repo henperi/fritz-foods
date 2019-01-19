@@ -2,16 +2,15 @@ import React from 'react';
 
 export const AddToCartModal = (props) => {
   const {
-    title, price, description, handleModal,
+    id, title, price, description, handleModal,
   } = props;
-  console.log('insideAddToCart', props);
+  // console.log('insideAddToCart', props);
   return (
     <div>
       <h2 className="text-center">Add this food item to existing Cart</h2>
       <div className="content-div">
         <div className="item-title">
           {title}
--
           <span className="badge price">
             &#8358;
             {price}
@@ -22,7 +21,11 @@ export const AddToCartModal = (props) => {
         </div>
       </div>
 
-      <button type="button" className="btn btn-blue btn-block btn-rounded btn-bg">
+      <button
+        type="button"
+        onClick={() => props.handleAddToCart(id)}
+        className="btn btn-blue btn-block btn-rounded btn-bg"
+      >
         Add To Cart
       </button>
 

@@ -16,6 +16,7 @@ class TriggerModal extends Component {
     } = this.props,
   ) => {
     event.preventDefault();
+
     if (event.target.classList.contains('triggerModal')) {
       return this.setState(() => ({
         modal: {
@@ -41,13 +42,13 @@ class TriggerModal extends Component {
   render() {
     const { triggerClass, triggerName } = this.props;
     const { modal } = this.state;
-    console.log(this.props);
+
     return (
       <span>
         <button onClick={this.handleModal} type="button" className={`triggerModal ${triggerClass}`}>
           {triggerName}
         </button>
-        <Modal {...modal} handleModal={this.handleModal} />
+        <Modal {...modal} handleModal={this.handleModal} {...this.props} />
       </span>
     );
   }

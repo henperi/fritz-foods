@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LandingPage correctly 1`] = `
+<div>
+  <Connect(Header) />
+  <main>
+    <Hero />
+    <div
+      className="p-h-5 text-center"
+    >
+      <p>
+        To enjoy amazing discounts and have a fun filled experience, login to your account!
+      </p>
+      <div>
+        <TriggerModal
+          triggerClass="btn btn-green"
+          triggerName="Login Now!"
+          type="signUpModal"
+        />
+        <TriggerModal
+          triggerClass="btn btn-blue"
+          triggerName="Signup Now!"
+          type="signUpModal"
+        />
+      </div>
+    </div>
+    <div
+      className="containerX"
+    >
+      <section>
+        <h2
+          className="text-center"
+        >
+          Todays Featured Foods
+        </h2>
+        <div
+          className="container food-menu"
+        >
+          <DefaultFood />
+          <DefaultFood />
+          <DefaultFood />
+        </div>
+      </section>
+      <section>
+        <div
+          className="card text-center"
+        >
+          <h2>
+            Wanna See Our Menu And All Food Items?
+          </h2>
+          <p>
+            <a
+              className="btn btn-blue btn-rounded btn-bg"
+              href="users/foods.html"
+            >
+              View Menu
+            </a>
+          </p>
+        </div>
+        <div
+          className="text-center"
+        >
+          <p>
+            <a
+              className="btn btn-green"
+              href="signin.html"
+            >
+              Login Now!
+            </a>
+            <a
+              className="btn btn-blue"
+              href="signup.html"
+            >
+              Signup Now!
+            </a>
+          </p>
+        </div>
+      </section>
+      <section
+        className="flex-h text-center"
+      >
+        <AboutCard />
+        <ContactCard />
+      </section>
+    </div>
+  </main>
+  <Footer />
+</div>
+`;
