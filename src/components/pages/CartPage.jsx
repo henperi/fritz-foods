@@ -1,29 +1,70 @@
-import React, { Component } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../ui/Header';
 import Footer from '../ui/Footer';
-import { fetchCartItems } from '../../actions/cartActions';
+import TriggerModal from '../ui/TriggerModal';
 
-class CartPage extends Component {
-  state = {
-    cart: [],
-    cartItems: [],
-  };
-
-  componentWillMount() {
-    const { fetchCartItems: dispatchFetchCartItems, cart } = this.props;
-    console.log('=====', cart);
-    dispatchFetchCartItems(cart);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    nextProps.cart && this.setState({ cart: nextProps.cart });
-    console.log('=====', nextProps.cart);
-  }
-
+class CartPage extends PureComponent {
   render() {
-    // console.log(this.props);
+    const { cart } = this.props;
+    let total = 0;
+    const renderCartItems = cart.map((item, index) => {
+      total += item.unitPrice * item.quantity;
+
+      return (
+        <Fragment key={item.foodId}>
+          <tr id={item.foodId} key={item.foodId}>
+            <td>{item.name}</td>
+            <td>
+              &#8358;
+              {item.unitPrice}
+            </td>
+            <td>
+              <button type="button" className="hide btn-sm">
+                -
+              </button>
+              {item.quantity}
+              <button type="button" className="hide btn-sm">
+                +
+              </button>
+            </td>
+            <td>
+              &#8358;
+              {item.unitPrice * item.quantity}
+            </td>
+            <td className="">
+              <TriggerModal
+                type="removeFromCart"
+                id={item.foodId}
+                title={item.name}
+                price={item.unitPrice * item.quantity}
+                triggerClass="btn btn-red btn-sm"
+                triggerName="Remove Item"
+                {...this.props}
+              />
+            </td>
+          </tr>
+          {cart.length === index + 1 && (
+            <tr id="#total">
+              <td>
+                <h2>Total</h2>
+              </td>
+              <td />
+              <td />
+              <td>
+                <h2>
+                  &#8358;
+                  <span className="show-total">{total}</span>
+                </h2>
+              </td>
+              <td className="" />
+            </tr>
+          )}
+        </Fragment>
+      );
+    });
+
     return (
       <div>
         <Header />
@@ -41,7 +82,7 @@ class CartPage extends Component {
                 My Cart
                 <Link className="link" to="/users/my-cart">
                   (
-                  <span className="cart-count">2</span>
+                  <span className="cart-count">{cart.length}</span>
                   Items)
                 </Link>
               </h2>
@@ -57,7 +98,7 @@ class CartPage extends Component {
                         <th>Actions</th>
                       </tr>
                     </thead>
-                    <tbody />
+                    <tbody>{renderCartItems}</tbody>
                   </table>
                 </div>
               </div>
@@ -111,10 +152,6 @@ class CartPage extends Component {
 
 const mapStateToProps = state => ({
   cart: state.cart,
-  cartItems: state.cartItems,
 });
 
-export default connect(
-  mapStateToProps,
-  { fetchCartItems },
-)(CartPage);
+export default connect(mapStateToProps)(CartPage);

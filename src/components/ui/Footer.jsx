@@ -1,9 +1,9 @@
 import React from 'react';
-import { CartSlider1 } from './CartSlider';
+import CartSlider1 from './CartSlider';
 
-const Footer = props => (
+const Footer = () => (
   <div>
-    <CartSlider1 {...props} />
+    <CartSlider1 />
     <footer className="footer text-center">
       <div>Fast Food Fast. &copy; All Rights Reserved</div>
     </footer>

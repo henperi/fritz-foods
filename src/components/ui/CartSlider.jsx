@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export const CartSlider1 = (props) => {
-  const { cartCount } = props;
+const CartSlider1 = (props) => {
+  const { cart } = props;
   return (
     <div className="cart card-shadow text-center">
       <div className="right-nav close-button">
@@ -14,7 +15,7 @@ export const CartSlider1 = (props) => {
       </div>
       <div className="card text-inverse">
         <span className="cart-count">
-          {cartCount}
+          {cart.length}
           {' '}
         </span>
         Items added
@@ -28,8 +29,8 @@ export const CartSlider1 = (props) => {
   );
 };
 
-CartSlider1.defaultProps = {
-  cartCount: 0,
-};
+const mapStateToProps = state => ({
+  cart: state.cart,
+});
 
-export const CartSlider2 = () => {};
+export default connect(mapStateToProps)(CartSlider1);

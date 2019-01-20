@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { removeFromCart } from '../../../actions/cartActions';
 
 export const AddToCartModal = (props) => {
   const {
-    id, title, price, description, handleModal,
+    id, title, price, description, food_name, handleModal,
   } = props;
   // console.log('insideAddToCart', props);
   return (
@@ -23,7 +25,7 @@ export const AddToCartModal = (props) => {
 
       <button
         type="button"
-        onClick={() => props.handleAddToCart(id)}
+        onClick={() => props.handleAddToCart(id, food_name, price)}
         className="btn btn-blue btn-block btn-rounded btn-bg"
       >
         Add To Cart
@@ -40,11 +42,10 @@ export const AddToCartModal = (props) => {
   );
 };
 
-export const RemoveFromCartModal = (props) => {
+const RemoveFromCart = (props) => {
   const {
-    title, price, description, handleModal,
+    title, price, description, handleModal, id,
   } = props;
-
   return (
     <div>
       <h2 className="text-center">Remove this food item from existing Cart</h2>
@@ -62,7 +63,13 @@ export const RemoveFromCartModal = (props) => {
         </div>
       </div>
 
-      <button type="button" className="btn btn-red btn-block btn-rounded btn-bg">
+      <button
+        onClick={() => {
+          props.removeFromCart(id);
+        }}
+        type="button"
+        className="btn btn-red btn-block btn-rounded btn-bg"
+      >
         Remove From Cart
       </button>
 
@@ -76,6 +83,15 @@ export const RemoveFromCartModal = (props) => {
     </div>
   );
 };
+
+const mapStateToProps = state => ({
+  cart: state.cart,
+});
+
+export const RemoveFromCartModal = connect(
+  mapStateToProps,
+  { removeFromCart },
+)(RemoveFromCart);
 
 export const SignUpModal = (props) => {
   const { handleModal } = props;

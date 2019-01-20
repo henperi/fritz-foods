@@ -2,7 +2,7 @@ import { GET_MENU } from '../actions/actionTypes';
 
 const menuDefaultState = [];
 
-const userReducer = (state = menuDefaultState, action) => {
+const menuReducer = (state = menuDefaultState, action) => {
   switch (action.type) {
     case GET_MENU:
       return { ...action.payload };
@@ -12,4 +12,4 @@ const userReducer = (state = menuDefaultState, action) => {
   }
 };
 
-export default userReducer;
+export default menuReducer;

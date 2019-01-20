@@ -1,11 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import { NavLink, Link, Redirect } from 'react-router-dom';
+import React, { PureComponent, Fragment } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/userActions';
 
-class Header extends Component {
-  state = {};
-
+class Header extends PureComponent {
   handleLogout = (event) => {
     event.preventDefault();
 
@@ -31,7 +29,8 @@ class Header extends Component {
   };
 
   render() {
-    const { user, cartCount } = this.props;
+    const { user, cart } = this.props;
+    const cartCount = cart.length;
 
     const IndexLinks = `${window.origin}/` === window.location.href && (
       <Fragment>
@@ -162,12 +161,9 @@ class Header extends Component {
   }
 }
 
-Header.defaultProps = {
-  cartCount: 0,
-};
-
 const mapStateToProps = state => ({
   user: state.user,
+  cart: state.cart,
 });
 
 export default connect(

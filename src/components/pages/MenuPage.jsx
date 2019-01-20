@@ -22,16 +22,15 @@ class MenuPage extends Component {
   componentWillReceiveProps(nextProps) {
     nextProps.menu && this.setState({ ...nextProps.menu });
     nextProps.cart && this.setState({ cart: nextProps.cart });
-    console.log(nextProps.cart);
   }
 
-  handleAddToCart = (id) => {
+  handleAddToCart = (id, name, price) => {
     const {
       addToCart: dispatchAddToCart,
       toggleCartSlider: dispatchToggleCartSlidder,
     } = this.props;
 
-    dispatchAddToCart(id);
+    dispatchAddToCart(id, name, price);
     dispatchToggleCartSlidder();
   };
 

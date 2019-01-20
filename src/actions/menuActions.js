@@ -16,7 +16,7 @@ export const getMenu = () => (dispatch) => {
   })
     .then(res => res.json())
     .then((data) => {
-      console.log('=============', data.menu, '=============');
+      // console.log('=============', data.menu, '=============');
       if (data.success) {
         dispatch({
           type: GET_MENU,

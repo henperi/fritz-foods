@@ -1,5 +1,11 @@
 /* eslint-disable no-case-declarations */
-import { ADD_TO_CART, REMOVE_FROM_CART, TOGGLE_CART_SLIDER } from '../actions/actionTypes';
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  TOGGLE_CART_SLIDER,
+  UPDATE_CART_ITEM_QUANTITY,
+  EMPTY_CART,
+} from '../actions/actionTypes';
 
 const cartDefaultState = localStorage.foodItems ? JSON.parse(localStorage.foodItems) : [];
 
@@ -7,39 +13,48 @@ const cartReducer = (state = cartDefaultState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       const cartItem = state.find(item => item.foodId === action.id);
-
       if (!cartItem) {
         localStorage.setItem(
           'foodItems',
-          JSON.stringify([...state, { foodId: action.id, quantity: 1 }]),
+          JSON.stringify([
+            ...state,
+            {
+              foodId: action.id,
+              quantity: 1,
+              name: action.name,
+              unitPrice: action.price,
+            },
+          ]),
         );
-        return [...state, { foodId: action.id, quantity: 1 }];
+        return [
+          ...state,
+          {
+            foodId: action.id,
+            quantity: 1,
+            name: action.name,
+            unitPrice: action.price,
+          },
+        ];
       }
 
-      return state.map((item) => {
+      let newState = state.map((item) => {
         if (item.foodId !== action.id) {
-          localStorage.setItem(
-            'foodItems',
-            JSON.stringify(JSON.parse(localStorage.foodItems).push(item)),
-          );
           return item;
         }
-        // localStorage.setItem('foodItems', JSON.stringify(cartDefaultState));
-        // console.log(cartDefaultState);
-        return Object.assign({}, item, { quantity: item.quantity + 1 });
-        // return item.foodId !== action.id
-        //   ? item
-        //   : Object.assign({}, item, { quantity: item.quantity + 1 });
+        return { ...item, quantity: item.quantity + 1 };
       });
+      localStorage.setItem('foodItems', JSON.stringify(newState));
+      return newState;
 
     case REMOVE_FROM_CART:
-      return state.filter(({ id }) => id !== action.id);
+      newState = state.filter(item => item.foodId !== action.id);
+      localStorage.setItem('foodItems', JSON.stringify(newState));
+      return newState;
 
     case TOGGLE_CART_SLIDER:
-      alert('CART::');
       return state;
 
-    case 'UPDATE_CART_ITEM_QUANTITY':
+    case UPDATE_CART_ITEM_QUANTITY:
       return state.map((item) => {
         if (item.id === action.id) {
           return { ...item, ...action.updates };
@@ -47,7 +62,7 @@ const cartReducer = (state = cartDefaultState, action) => {
         return item;
       });
 
-    case 'EMPTY_CART':
+    case EMPTY_CART:
       return [];
 
     default:
