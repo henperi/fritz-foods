@@ -42,44 +42,9 @@ exports[`should render ModalTypes correctly 1`] = `
 `;
 
 exports[`should render ModalTypes correctly 2`] = `
-<div>
-  <h2
-    className="text-center"
-  >
-    Remove this food item from existing Cart
-  </h2>
-  <div
-    className="content-div"
-  >
-    <div
-      className="item-title"
-    >
-      -
-      <span
-        className="badge price"
-      >
-        ₦
-      </span>
-    </div>
-    <div
-      className="item-description"
-    >
-      <p />
-    </div>
-  </div>
-  <button
-    className="btn btn-red btn-block btn-rounded btn-bg"
-    type="button"
-  >
-    Remove From Cart
-  </button>
-  <button
-    className="close-button btn btn-primary btn-block btn-rounded btn-bg"
-    type="button"
-  >
-    Cancel
-  </button>
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;
 
 exports[`should render ModalTypes correctly 3`] = `
