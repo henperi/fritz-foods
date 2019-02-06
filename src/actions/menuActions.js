@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { SET_MENU, SET_ERRORS, SET_FEATURED_MENU } from './actionTypes';
 import axiosInstance from '../utils/axiosInstance';
 
@@ -8,9 +7,7 @@ export const setMenu = (payload = {}) => ({
 });
 
 export const setFeaturedMenu = (payload = {}) => {
-  // console.log(payload);
   const featuredMenu = payload.slice(0, 3);
-  // console.log(featuredMenu);
 
   return {
     type: SET_FEATURED_MENU,
