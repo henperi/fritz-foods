@@ -8,6 +8,7 @@ import SignupPage from '../components/pages/SignupPage';
 import LoginPage from '../components/pages/LoginPage';
 import ScrollToTop from './ScrollToTop';
 import OrdersHistory from '../components/pages/OrdersHistory';
+import OrderedItems from '../components/pages/OrderedItems';
 
 const AppRoutes = () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ const AppRoutes = () => (
         <Route path="/users/foods" component={MenuPage} />
         <Route path="/users/my-cart" component={CartPage} />
         <Route path="/users/my-orders" component={OrdersHistory} />
+        <Route path="/my-orders/:orderId" component={OrderedItems} />
         <Route component={NotFoundPage} />
       </Switch>
     </ScrollToTop>
