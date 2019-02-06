@@ -14,7 +14,7 @@ class LoginPage extends Component {
 
   componentWillMount() {
     const { user, history } = this.props;
-    console.log('USER::', user);
+    // console.log('USER::', user);
     return user.isAuthenticated && history.push('/users/foods');
   }
 

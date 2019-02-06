@@ -1,10 +1,10 @@
-import { GET_MENU } from '../actions/actionTypes';
+import { SET_MENU } from '../actions/actionTypes';
 
 const menuDefaultState = [];
 
 const menuReducer = (state = menuDefaultState, action) => {
   switch (action.type) {
-    case GET_MENU:
+    case SET_MENU:
       return { ...action.payload };
 
     default:

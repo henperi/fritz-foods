@@ -14,7 +14,7 @@ class MenuPage extends Component {
     cart: [],
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { getMenu: dispatchGetMenu } = this.props;
     dispatchGetMenu();
   }
@@ -43,10 +43,7 @@ class MenuPage extends Component {
         <main className="main-content">
           <div className="container hideX">
             <LoadingSpinner />
-            <h1 className="text-center">
-              Whats On Our Menu
-              {cart.length}
-            </h1>
+            <h1 className="text-center">Whats On Our Menu</h1>
             <section className="card">
               <div className="food-menu">
                 {menu.map(singleFood => (

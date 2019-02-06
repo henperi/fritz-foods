@@ -1,33 +1,50 @@
 // import axios from 'axios';
-import { GET_MENU, SET_ERRORS } from './actionTypes';
+import { SET_MENU, SET_ERRORS, SET_FEATURED_MENU } from './actionTypes';
+import axiosInstance from '../utils/axiosInstance';
 
-const baseApi = 'http://localhost:5000/api/v1';
+export const setMenu = (payload = {}) => ({
+  type: SET_MENU,
+  payload,
+});
+
+export const setFeaturedMenu = (payload = {}) => {
+  // console.log(payload);
+  const featuredMenu = payload.slice(0, 3);
+  // console.log(featuredMenu);
+
+  return {
+    type: SET_FEATURED_MENU,
+    payload: featuredMenu,
+  };
+};
 
 export const getMenu = () => (dispatch) => {
-  // axios
-  //   .post(signupUrl, userData)
-  fetch(`${baseApi}/menu`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json, text/plain, */*',
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json;charset=UTF-8',
-    },
-  })
-    .then(res => res.json())
-    .then((data) => {
-      // console.log('=============', data.menu, '=============');
-      if (data.success) {
-        dispatch({
-          type: GET_MENU,
-          payload: { menu: [...data.menu] },
+  axiosInstance
+    .get('/menu')
+    .then((response) => {
+      const { data } = response;
+      dispatch({
+        type: SET_MENU,
+        payload: { menu: [...data.menu] },
+      });
+      dispatch(setFeaturedMenu(data.menu));
+    })
+    .catch((errors) => {
+      const { response = {}, request } = errors;
+      console.log(response);
+      console.log('=======');
+      console.log(request);
+
+      if (response.data) {
+        return dispatch({
+          type: SET_ERRORS,
+          payload: [...response.data.errors],
         });
       }
-    })
-    .catch(() => {
-      dispatch({
+
+      return dispatch({
         type: SET_ERRORS,
-        payload: [{ msg: 'A network error occured tried again' }],
+        payload: [{ msg: 'An unknown error occurred, Please check your network and try again' }],
       });
     });
 };

@@ -5,12 +5,14 @@ import {
   TOGGLE_CART_SLIDER,
   UPDATE_CART_ITEM_QUANTITY,
   EMPTY_CART,
+  SET_CURRENT_CART,
 } from '../actions/actionTypes';
 
-const cartDefaultState = localStorage.foodItems ? JSON.parse(localStorage.foodItems) : [];
-
-const cartReducer = (state = cartDefaultState, action) => {
+const cartReducer = (state = [], action) => {
   switch (action.type) {
+    case SET_CURRENT_CART:
+      return [...action.payload];
+
     case ADD_TO_CART:
       const cartItem = state.find(item => item.foodId === action.id);
       if (!cartItem) {

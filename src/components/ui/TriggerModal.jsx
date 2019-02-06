@@ -15,9 +15,9 @@ class TriggerModal extends Component {
       id = '', type = '', title = '', price = '', description = '',
     } = this.props,
   ) => {
-    event.preventDefault();
+    // event.preventDefault();
 
-    if (event.target.classList.contains('triggerModal')) {
+    if (event && event.target.classList.contains('triggerModal')) {
       return this.setState(() => ({
         modal: {
           isOpen: true,
@@ -29,14 +29,18 @@ class TriggerModal extends Component {
         },
       }));
     }
-    if (event.target.classList.contains('close-button')) {
+    if (event && event.target.classList.contains('close-button')) {
       return this.setState(() => ({
         modal: {
           isOpen: false,
         },
       }));
     }
-    return null;
+    return this.setState(() => ({
+      modal: {
+        isOpen: false,
+      },
+    }));
   };
 
   render() {

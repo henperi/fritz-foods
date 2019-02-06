@@ -8,7 +8,9 @@ import TriggerModal from '../ui/TriggerModal';
 class CartPage extends PureComponent {
   render() {
     const { cart } = this.props;
+    console.log(cart);
     let total = 0;
+
     const renderCartItems = cart.map((item, index) => {
       total += item.unitPrice * item.quantity;
 
@@ -107,39 +109,14 @@ class CartPage extends PureComponent {
                 <div className="hide loader">
                   <i className="fa fa-spinner fa-spin" />
                 </div>
-                <button
-                  type="button"
-                  className="btn btn-green btn-bg btn-rounded btn-block triggerModal placeOrderModal"
-                  data-target="placeOrderModal"
-                >
-                  Place Order
-                </button>
-
-                <div className="modal" id="#placeOrderModal">
-                  <div className="modal-content">
-                    <div className="text-center">
-                      <span className="close-button btn btn-primary btn-sm push-right">x</span>
-                      <h2 className="text-center">You are about to place an order</h2>
-                      <form onSubmit={() => {}} method="POST" className=" card card-shadow">
-                        <div className="">
-                          <h3>Are you sure you want to order all the items in cart?</h3>
-                          <button
-                            type="button"
-                            className="btn btn-green btn-rounded btn-bg place-order"
-                          >
-                            Proceed
-                          </button>
-                          <button
-                            type="button"
-                            className="close-button btn btn-primary btn-rounded btn-bg"
-                          >
-                            Cancel
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+                {cart.length > 0 && (
+                  <TriggerModal
+                    type="placeOrderModal"
+                    triggerClass="btn btn-green btn-bg btn-rounded btn-block"
+                    triggerName="Place Order"
+                    {...this.props}
+                  />
+                )}
               </div>
             </section>
           </div>
