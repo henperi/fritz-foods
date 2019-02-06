@@ -5,6 +5,7 @@ import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 import TriggerModal from '../ui/TriggerModal';
 import { getOrderHistory } from '../../actions/orderActions';
+import { formatDate } from '../../helpers/formaters';
 
 class OrderHistory extends PureComponent {
   componentDidMount() {
@@ -38,7 +39,7 @@ Item(s)
             &#8358;
             {order.total_mount}
           </td>
-          <td>{order.created_at}</td>
+          <td>{formatDate(order.created_at)}</td>
           <td className={`text-${order.order_status.toLowerCase()}`}>{order.order_status}</td>
           <td className="">
             <button type="button" className="triggerModal btn btn-red btn-sm">

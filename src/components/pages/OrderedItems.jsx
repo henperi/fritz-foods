@@ -5,6 +5,7 @@ import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 import TriggerModal from '../ui/TriggerModal';
 import { getOrderedItems } from '../../actions/orderActions';
+import { formatDate } from '../../helpers/formaters';
 
 class OrderHistory extends PureComponent {
   componentDidMount() {
@@ -31,7 +32,7 @@ class OrderHistory extends PureComponent {
             &#8358;
             {`${item.total}`}
           </td>
-          <td>{item.created_at}</td>
+          <td>{formatDate(item.created_at)}</td>
           <td className={`text-${item.itemstatus}`}>{item.itemstatus}</td>
         </tr>
       </Fragment>
