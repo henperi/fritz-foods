@@ -5,6 +5,7 @@ import modalReducer from './modalReducers';
 import errorReducer from './errorReducer';
 import menuReducer from './menuReducer';
 import featuredMenuReducer from './featuredMenuReducer';
+import orderReducer from './orderReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   errors: errorReducer,
   menu: menuReducer,
   featuredMenu: featuredMenuReducer,
+  order: orderReducer,
 });
 
 export default rootReducer;

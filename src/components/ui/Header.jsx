@@ -74,19 +74,21 @@ class Header extends PureComponent {
         </NavLink>
         {IndexLinks}
         <div className="dropdown">
-          <button type="button" className="dropbtn">
+          <NavLink to="/users/my-orders" activeClassName="active">
             My Orders
-            <i className="fa fa-caret-down" />
-          </button>
-          <div className="dropdown-content">
+          </NavLink>
+
+          {/*
+            <div className="dropdown-content">
             <NavLink to="/pending-orders">Pending Orders</NavLink>
             <NavLink to="/completed-orders">Completed Orders</NavLink>
             <NavLink to="/all-orders">All My Orders</NavLink>
-          </div>
+            </div>
+          */}
         </div>
-        <NavLink to="/my-profile" className="">
+        {/*        <NavLink to="/my-profile" className="">
           My Profile
-        </NavLink>
+        </NavLink> */}
         <NavLink className="btn btn-green" to="/users/my-cart">
           My Cart
           <i className="fa fa-shopping-cart" />
