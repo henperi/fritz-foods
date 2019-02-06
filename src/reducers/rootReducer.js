@@ -4,6 +4,7 @@ import userReducer from './userReducer';
 import modalReducer from './modalReducers';
 import errorReducer from './errorReducer';
 import menuReducer from './menuReducer';
+import featuredMenuReducer from './featuredMenuReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   modal: modalReducer,
   errors: errorReducer,
   menu: menuReducer,
+  featuredMenu: featuredMenuReducer,
 });
 
 export default rootReducer;

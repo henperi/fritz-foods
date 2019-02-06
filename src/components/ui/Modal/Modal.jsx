@@ -1,5 +1,6 @@
 import React from 'react';
 import { AddToCartModal, RemoveFromCartModal, SignUpModal } from './ModalTypes';
+import PlaceOrderModal from './Types/PlaceOrderModal';
 
 const modal = (props) => {
   const {
@@ -19,6 +20,7 @@ const modal = (props) => {
           {type === 'addToCart' && <AddToCartModal {...props} />}
           {type === 'removeFromCart' && <RemoveFromCartModal {...props} />}
           {type === 'signUpModal' && <SignUpModal {...props} />}
+          {type === 'placeOrderModal' && <PlaceOrderModal {...props} />}
         </div>
       </div>
     </div>

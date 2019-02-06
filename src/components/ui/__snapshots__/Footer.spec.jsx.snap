@@ -2,7 +2,7 @@
 
 exports[`should render Header correctly 1`] = `
 <div>
-  <CartSlider1 />
+  <Connect(CartSlider1) />
   <footer
     className="footer text-center"
   >

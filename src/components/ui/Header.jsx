@@ -1,37 +1,51 @@
-import React, { Component } from 'react';
-import { NavLink, Link, Redirect } from 'react-router-dom';
+import React, { PureComponent, Fragment } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/userActions';
 
-class Header extends Component {
-  state = {};
-
+class Header extends PureComponent {
   handleLogout = (event) => {
     event.preventDefault();
 
     const { logoutUser: dispatchLogout, history, user } = this.props;
     dispatchLogout();
 
-    // localStorage.removeItem('userToken');
-    // localStorage.removeItem('userId');
-    // localStorage.removeItem('fullname');
-    // localStorage.removeItem('role');
-    // console.log(this.props, '====');
-    // if (!user.isAuthenticated) return <Redirect to="/signin" />;
-    // history.push('/signin');
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('fullname');
+    localStorage.removeItem('role');
+  };
+
+  toggleNav = (event) => {
+    event.preventDefault();
+  };
+
+  toggleNav = (event) => {
+    event.preventDefault();
+    return (
+      event.target.parentElement.parentElement.classList.contains('topnav')
+      && event.target.parentElement.parentElement.classList.toggle('responsive')
+    );
   };
 
   render() {
-    console.log('insideHeader', this.props);
-    const { user } = this.props;
+    const { user, cart } = this.props;
+    const cartCount = cart.length;
+
+    const IndexLinks = `${window.origin}/` === window.location.href && (
+      <Fragment>
+        <NavLink to="#about">About Us</NavLink>
+        <NavLink to="#contact">Contact Us</NavLink>
+      </Fragment>
+    );
 
     const guestNav = (
       <div className="right-nav">
         <NavLink to="/users/foods" className="">
           Foods Menu
         </NavLink>
-        <NavLink to="#about">About Us</NavLink>
-        <NavLink to="#contact">Contact Us</NavLink>
+        {IndexLinks}
+
         <NavLink to="/signin" className="">
           Signin
         </NavLink>
@@ -39,11 +53,12 @@ class Header extends Component {
         <NavLink className="btn btn-green" to="/users/my-cart">
           My Cart
           <i className="fa fa-shopping-cart" />
-          <span className="count cart-count">0</span>
+          {' '}
+          <span className="count cart-count">{cartCount}</span>
         </NavLink>
         <a
           onClick={(e) => {
-            e.preventDefault();
+            this.toggleNav(e);
           }}
           href="/"
           className="icon"
@@ -57,33 +72,33 @@ class Header extends Component {
         <NavLink to="/users/foods" activeClassName="active">
           Foods Menu
         </NavLink>
+        {IndexLinks}
         <div className="dropdown">
           <button type="button" className="dropbtn">
             My Orders
             <i className="fa fa-caret-down" />
           </button>
           <div className="dropdown-content">
-            <NavLink to="/pending-orders.html">Pending Orders</NavLink>
-            <NavLink to="/completed-orders.html">Completed Orders</NavLink>
-            <NavLink className="all-orders.html" to="/all-orders.html">
-              All My Orders
-            </NavLink>
+            <NavLink to="/pending-orders">Pending Orders</NavLink>
+            <NavLink to="/completed-orders">Completed Orders</NavLink>
+            <NavLink to="/all-orders">All My Orders</NavLink>
           </div>
         </div>
-        <NavLink to="/my-profile.html" className="">
+        <NavLink to="/my-profile" className="">
           My Profile
         </NavLink>
-        <NavLink className="btn btn-green" to="/my-cart.html">
+        <NavLink className="btn btn-green" to="/users/my-cart">
           My Cart
           <i className="fa fa-shopping-cart" />
-          <span className="count cart-count">0</span>
+          {' '}
+          <span className="count cart-count">{cartCount}</span>
         </NavLink>
-        <a onClick={this.handleLogout} href="/" className="btn-rounded logout">
+        <a onClick={this.handleLogout} href="/logout" className="btn-rounded logout">
           Logout
         </a>
         <a
           onClick={(e) => {
-            e.preventDefault();
+            this.toggleNav(e);
           }}
           href="/"
           className="icon"
@@ -94,23 +109,22 @@ class Header extends Component {
     );
     const adminNav = (
       <div className="right-nav">
-        <NavLink to="foods.html" className="active">
+        <NavLink to="/admins/foods" className="active">
           Foods Menu
         </NavLink>
+        {IndexLinks}
         <div className="dropdown">
           <button type="button" className="dropbtn">
             Orders
             <i className="fa fa-caret-down" />
           </button>
           <div className="dropdown-content">
-            <NavLink to="pending-orders.html">Pending Orders</NavLink>
-            <NavLink to="completed-orders.html">Completed Orders</NavLink>
-            <NavLink className="all-orders.html" to="all-orders.html">
-              All Orders
-            </NavLink>
+            <NavLink to="/admins/pending-orders">Pending Orders</NavLink>
+            <NavLink to="/admins/completed-orders">Completed Orders</NavLink>
+            <NavLink to="/admins/all-orders">All Orders</NavLink>
           </div>
         </div>
-        <NavLink to="my-profile.html" className="">
+        <NavLink to="/admins/my-profile" className="">
           My Profile
         </NavLink>
         <a onClick={this.handleLogout} href="/" className="btn-rounded logout">
@@ -118,7 +132,7 @@ class Header extends Component {
         </a>
         <a
           onClick={(e) => {
-            e.preventDefault();
+            this.toggleNav(e);
           }}
           href="/"
           className="icon"
@@ -130,9 +144,8 @@ class Header extends Component {
 
     let nav = guestNav;
     if (user.isAuthenticated) {
-      user.role === 'admin' ? (nav = adminNav) : (nav = userNav);
+      nav = user.role === 'admin' ? adminNav : userNav;
     }
-    // if (!user.isAuthenticated) return <Redirect to="/signin" />;
     return (
       <header>
         <nav className="topnav" id="myTopnav">
@@ -150,6 +163,7 @@ class Header extends Component {
 
 const mapStateToProps = state => ({
   user: state.user,
+  cart: state.cart,
 });
 
 export default connect(

@@ -15,8 +15,7 @@ const NotFoundPage = () => (
         <p>
           <Link className="link fs-20" to="/">
             <i className="fa fa-backward" />
-            {' '}
-Go back Home
+            Go back Home
             <i className="fa fa-home" />
           </Link>
         </p>

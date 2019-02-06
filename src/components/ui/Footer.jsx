@@ -1,5 +1,6 @@
 import React from 'react';
-import { CartSlider1 } from './CartSlider';
+import CartSlider1 from './CartSlider';
+// import { toastr as flash } from 'react-redux-toastr';
 
 const Footer = () => (
   <div>

@@ -17,7 +17,9 @@ class SignupPage extends Component {
   };
 
   componentWillMount() {
-    this.props.user.isAuthenticated && this.props.history.push('/users/foods');
+    const { user, history } = this.props;
+
+    return user.isAuthenticated && history.push('/users/foods');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -217,6 +219,7 @@ SignupPage.propTypes = {
   signupUser: PropTypes.func.isRequired,
   errors: PropTypes.array,
   history: PropTypes.object,
+  user: PropTypes.object,
 };
 
 SignupPage.defaultProps = {

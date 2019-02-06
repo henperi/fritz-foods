@@ -4,33 +4,42 @@ import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 import LoadingSpinner from '../ui/LoadingSpinner';
 import { DefaultFood } from '../ui/FoodCard';
-import { ViewMore } from '../ui/ViewMore';
+import { ViewMore1 } from '../ui/ViewMore';
 import { getMenu } from '../../actions/menuActions';
+import { addToCart, toggleCartSlider } from '../../actions/cartActions';
 
 class MenuPage extends Component {
   state = {
     menu: [],
+    cart: [],
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { getMenu: dispatchGetMenu } = this.props;
     dispatchGetMenu();
   }
 
   componentWillReceiveProps(nextProps) {
-    return nextProps.menu && this.setState({ ...nextProps.menu });
+    nextProps.menu && this.setState({ ...nextProps.menu });
+    nextProps.cart && this.setState({ cart: nextProps.cart });
   }
 
+  handleAddToCart = (id, name, price) => {
+    const {
+      addToCart: dispatchAddToCart,
+      toggleCartSlider: dispatchToggleCartSlidder,
+    } = this.props;
+
+    dispatchAddToCart(id, name, price);
+    dispatchToggleCartSlidder();
+  };
+
   render() {
-    const { menu } = this.state;
-    // const Menu = [...menu];
-    console.log('menu:::', menu);
-    // menu.foreach((singleFood) => {
-    //   console.log(singleFood, 'hhhhh');
-    // });
+    const { menu, cart } = this.state;
+
     return (
       <div>
-        <Header />
+        <Header cartCount={cart.length} />
         <main className="main-content">
           <div className="container hideX">
             <LoadingSpinner />
@@ -38,14 +47,18 @@ class MenuPage extends Component {
             <section className="card">
               <div className="food-menu">
                 {menu.map(singleFood => (
-                  <DefaultFood key={singleFood.food_id} {...singleFood} />
+                  <DefaultFood
+                    key={singleFood.food_id}
+                    {...singleFood}
+                    handleAddToCart={this.handleAddToCart}
+                  />
                 ))}
               </div>
-              <ViewMore />
+              <ViewMore1 />
             </section>
           </div>
         </main>
-        <Footer />
+        <Footer cartCount={cart.length} />
       </div>
     );
   }
@@ -53,9 +66,10 @@ class MenuPage extends Component {
 
 const mapStateToProps = state => ({
   menu: state.menu,
+  cart: state.cart,
 });
 
 export default connect(
   mapStateToProps,
-  { getMenu },
+  { getMenu, addToCart, toggleCartSlider },
 )(MenuPage);

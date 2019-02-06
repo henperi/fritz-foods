@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render CartSlider correctly 1`] = `
+exports[`should render CartPage correctly 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>
