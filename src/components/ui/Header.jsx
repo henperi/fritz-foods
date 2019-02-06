@@ -86,9 +86,9 @@ class Header extends PureComponent {
             </div>
           */}
         </div>
-        <NavLink to="/my-profile" className="">
+        {/*        <NavLink to="/my-profile" className="">
           My Profile
-        </NavLink>
+        </NavLink> */}
         <NavLink className="btn btn-green" to="/users/my-cart">
           My Cart
           <i className="fa fa-shopping-cart" />
