@@ -1,4 +1,8 @@
-import { SET_ORDER_HISTORY, SET_ORDERED_ITEMS } from '../actions/actionTypes';
+import {
+  SET_ORDER_HISTORY,
+  SET_ORDERED_ITEMS,
+  REMOVE_ONE_ORDER_HISTORY,
+} from '../actions/actionTypes';
 
 const initialState = {
   orderHistory: [],
@@ -17,6 +21,12 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         orderedItems: [...action.payload],
+      };
+
+    case REMOVE_ONE_ORDER_HISTORY:
+      return {
+        ...state,
+        orderHistory: state.orderHistory.filter(item => item.order_id !== action.id),
       };
 
     default:

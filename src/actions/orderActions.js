@@ -1,4 +1,9 @@
-import { SET_ERRORS, SET_ORDER_HISTORY, SET_ORDERED_ITEMS } from './actionTypes';
+import {
+  SET_ERRORS,
+  SET_ORDER_HISTORY,
+  SET_ORDERED_ITEMS,
+  REMOVE_ONE_ORDER_HISTORY,
+} from './actionTypes';
 import axiosInstance from '../utils/axiosInstance';
 import { emptyCart } from './cartActions';
 
@@ -45,13 +50,18 @@ export const setOrderedItems = payload => ({
   payload,
 });
 
+export const removeOneOrderHistory = id => ({
+  type: REMOVE_ONE_ORDER_HISTORY,
+  id,
+});
+
 export const getOrderHistory = userId => (dispatch) => {
   console.log(userId);
   axiosInstance
     .get(`/users/${userId}/orders`)
     .then((response) => {
       const { data } = response;
-      console.log(data);
+      // console.log(data);
       // alert('getOrders');
       dispatch(setOrderHistory(data.orders));
     })
@@ -87,6 +97,35 @@ export const getOrderedItems = (userId, orderId) => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
+      console.log(response);
+      console.log('=======');
+      console.log(request);
+
+      if (response.data) {
+        return dispatch({
+          type: SET_ERRORS,
+          payload: [...response.data.errors],
+        });
+      }
+
+      return dispatch({
+        type: SET_ERRORS,
+        payload: [{ msg: 'An unknown error occurred, Please check your network and try again' }],
+      });
+    });
+};
+
+export const cancelOrder = (orderId = {}, handleModal) => (dispatch) => {
+  // const cancelData = { orderId };
+  axiosInstance
+    .delete('/orders', { data: { orderId } })
+    .then((response) => {
+      // handleModal();
+      dispatch(removeOneOrderHistory(orderId));
+    })
+    .catch((errors) => {
+      const { response = {}, request } = errors;
+      console.log(errors);
       console.log(response);
       console.log('=======');
       console.log(request);
