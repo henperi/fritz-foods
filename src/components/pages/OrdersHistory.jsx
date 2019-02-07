@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 import TriggerModal from '../ui/TriggerModal';
-import { getOrderHistory } from '../../actions/orderActions';
+import { getOrderHistory, cancelOrder } from '../../actions/orderActions';
 import { formatDate } from '../../helpers/formaters';
 
 class OrderHistory extends PureComponent {
@@ -16,8 +16,9 @@ class OrderHistory extends PureComponent {
   render() {
     const {
       order: { orderHistory },
+      cancelOrder: dispatchCancelOrder,
     } = this.props;
-    console.log(orderHistory);
+    // console.log(orderHistory, dispatchCancelOrder);
 
     const renderOrderHistory = orderHistory.map((order, index) => (
       <Fragment key={order.order_id}>
@@ -42,7 +43,13 @@ Item(s)
           <td>{formatDate(order.created_at)}</td>
           <td className={`text-${order.order_status.toLowerCase()}`}>{order.order_status}</td>
           <td className="">
-            <button type="button" className="triggerModal btn btn-red btn-sm">
+            <button
+              onClick={() => {
+                dispatchCancelOrder(order.order_id);
+              }}
+              type="button"
+              className="triggerModal btn btn-red btn-sm"
+            >
               Cancel Order
             </button>
 
@@ -137,5 +144,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getOrderHistory },
+  { getOrderHistory, cancelOrder },
 )(OrderHistory);
