@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config=jest.config.json --coverage",
-    "test:watch": "jest -config=jest.config.json --coverage --watchAll",
+    "test:watch": "jest --config=jest.config.json --coverage --watchAll",
     "build": "webpack --watch",
     "start:dev": "webpack-dev-server --open --hot",
     "coverage": "npm test -- --coverage",

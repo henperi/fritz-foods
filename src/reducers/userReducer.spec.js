@@ -14,36 +14,30 @@ describe('userReducer', () => {
     expect(userReducer(initialState, action)).toEqual(initialState);
   });
 
-  // it('should update the state and set order history when type is SET_ORDER_HISTORY and action is specified', () => {
-  //   const action = {
-  //     type: SET_ORDER_HISTORY,
-  //     payload: [{ id: 5, price: 500 }, { id: 3, price: 700 }],
-  //   };
-  //   expect(userReducer(initialState, action)).toMatchSnapshot({});
-  //   expect(userReducer(initialState, action)).toEqual({
-  //     orderHistory: [{ id: 5, price: 500 }, { id: 3, price: 700 }],
-  //     orderedItems: [],
-  //   });
-  // });
+  it('should update the state and set SIGNUP_USER when type is SIGNUP_USER and action is specified', () => {
+    const action = {
+      type: SIGNUP_USER,
+      payload: { user_id: 5, name: 500 },
+    };
+    expect(userReducer(initialState, action)).toMatchSnapshot({});
+    expect(userReducer(initialState, action)).toEqual({ name: 500, user_id: 5 });
+  });
 
-  // it('should update the state and set order items when type is SET_ORDERED_ITEMS and action is specified', () => {
-  //   const action = {
-  //     type: SET_ORDERED_ITEMS,
-  //     payload: [{ id: 5, price: 500 }, { id: 3, price: 700 }],
-  //   };
-  //   expect(userReducer(initialState, action)).toMatchSnapshot({});
-  //   expect(userReducer(initialState, action)).toEqual({
-  //     orderHistory: [],
-  //     orderedItems: [{ id: 5, price: 500 }, { id: 3, price: 700 }],
-  //   });
-  // });
+  it('should update the state and set SET_AUTH_USER when type is SET_AUTH_USER and action is specified', () => {
+    const action = {
+      type: SET_AUTH_USER,
+      payload: { user_id: 5, name: 500 },
+    };
+    expect(userReducer(initialState, action)).toMatchSnapshot({});
+    expect(userReducer(initialState, action)).toEqual({ name: 500, user_id: 5 });
+  });
 
-  // it('should update the state and remove an order history when type is REMOVE_ONE_ORDER_HISTORY and action is specified', () => {
-  //   const action = {
-  //     type: REMOVE_ONE_ORDER_HISTORY,
-  //     id: 5,
-  //   };
-  //   expect(userReducer(initialState, action)).toMatchSnapshot({});
-  //   expect(userReducer(initialState, action)).toEqual({ orderHistory: [], orderedItems: [] });
-  // });
+  it('should update the state and REMOVE_AUTH_USER when type is REMOVE_AUTH_USER and payload is specified', () => {
+    const action = {
+      type: REMOVE_AUTH_USER,
+      payload: 5,
+    };
+    expect(userReducer(initialState, action)).toMatchSnapshot({});
+    expect(userReducer(initialState, action)).toEqual({});
+  });
 });
