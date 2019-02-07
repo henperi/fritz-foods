@@ -1,8 +1,6 @@
 import { SET_MENU } from '../actions/actionTypes';
 
-const menuDefaultState = [];
-
-const menuReducer = (state = menuDefaultState, action) => {
+const menuReducer = (state = [], action) => {
   switch (action.type) {
     case SET_MENU:
       return { ...action.payload };

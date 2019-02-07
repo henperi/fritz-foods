@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modalReducers should return the default state if no action is specified 1`] = `
+Object {
+  "id": undefined,
+  "isOpen": false,
+}
+`;
+
+exports[`modalReducers should update the state and SET_MENU when type is SET_MENU and payload is specified 1`] = `
+Object {
+  "0": Object {
+    "name": 500,
+    "user_id": 5,
+  },
+}
+`;
+
+exports[`modalReducers should update the state and SET_MENU when type is SET_MENU and payload is specified 2`] = `
+Object {
+  "id": undefined,
+  "isOpen": Array [
+    Object {
+      "name": 500,
+      "user_id": 5,
+    },
+  ],
+}
+`;

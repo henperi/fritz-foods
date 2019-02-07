@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`orderReducer should return the default state if no action is specified 1`] = `
+Object {
+  "orderHistory": Array [],
+  "orderedItems": Array [],
+}
+`;
+
+exports[`orderReducer should update the state and remove an order history when type is REMOVE_ONE_ORDER_HISTORY and action is specified 1`] = `
+Object {
+  "orderHistory": Array [],
+  "orderedItems": Array [],
+}
+`;
+
+exports[`orderReducer should update the state and set order history when type is SET_ORDER_HISTORY and action is specified 1`] = `
+Object {
+  "orderHistory": Array [
+    Object {
+      "id": 5,
+      "price": 500,
+    },
+    Object {
+      "id": 3,
+      "price": 700,
+    },
+  ],
+  "orderedItems": Array [],
+}
+`;
+
+exports[`orderReducer should update the state and set order items when type is SET_ORDERED_ITEMS and action is specified 1`] = `
+Object {
+  "orderHistory": Array [],
+  "orderedItems": Array [
+    Object {
+      "id": 5,
+      "price": 500,
+    },
+    Object {
+      "id": 3,
+      "price": 700,
+    },
+  ],
+}
+`;
