@@ -1,8 +1,37 @@
+/* eslint-disable no-undef */
 import React from 'react';
-import { shallow } from 'enzyme';
-import LandingPage from './LandingPage';
+import sinon from 'sinon';
+import { LandingPage } from './LandingPage';
+import { getMenu } from '../../actions/menuActions';
+import { addToCart, toggleCartSlider } from '../../actions/cartActions';
+import LoadingSpinner from '../ui/LoadingSpinner';
+// import { loginUser } from '../../actions/userActions';
+// import SignupForm from './SignupForm';
 
-test('should render LandingPage correctly', () => {
-  const wrapper = shallow(<LandingPage />);
-  expect(wrapper).toMatchSnapshot();
+describe('The MenuPage Component Test Suite', () => {
+  const wrapper = shallow(
+    <LandingPage
+      featuredMenu={[]}
+      addToCart={addToCart}
+      toggleCartSlider={toggleCartSlider}
+      getMenu={getMenu}
+    />,
+  );
+  it('should render the <MenuPage /> Component', () => {
+    expect(wrapper.length).toBe(1);
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(LandingPage)).toBeDefined();
+  });
+
+  it('should call the handleAddToCart', () => {
+    wrapper.instance().handleAddToCart({ id: 5, name: 'Rice', price: 500 });
+    expect(sinon.stub(jest.fn(wrapper.instance().props.addToCart()))).not.toHaveBeenCalled();
+  });
+
+  // it('should render exactly one form tag', () => {
+  //   expect(wrapper.find(LoadingSpinner)).toHaveLength(1);
+  // });
+  // // it('should render exactly two input tags', () => {
+  // //   expect(wrapper.find('input')).toHaveLength(2);
+  // // });
 });
