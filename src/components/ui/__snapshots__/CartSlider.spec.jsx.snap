@@ -1,7 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render CartSlider correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<div
+  className="cart card-shadow text-center"
+>
+  <div
+    className="right-nav close-button"
+  >
+    <i
+      className="fa fa-close"
+    />
+  </div>
+  <br />
+  <div
+    className="container"
+  >
+    <i
+      className="fa fa-shopping-cart"
+    />
+    My Cart
+  </div>
+  <div
+    className="card text-inverse"
+  >
+    <span
+      className="cart-count"
+    >
+      0
+       
+    </span>
+    Items added
+  </div>
+  <div
+    className="container"
+  >
+    <a
+      className="btn btn-sm btn-green"
+      href="my-cart.html"
+    >
+      View
+    </a>
+  </div>
+</div>
 `;

@@ -8,7 +8,7 @@ import { ViewMore1 } from '../ui/ViewMore';
 import { getMenu } from '../../actions/menuActions';
 import { addToCart, toggleCartSlider } from '../../actions/cartActions';
 
-class MenuPage extends Component {
+export class MenuPage extends Component {
   state = {
     menu: [],
     cart: [],
@@ -36,7 +36,6 @@ class MenuPage extends Component {
 
   render() {
     const { menu, cart } = this.state;
-
     return (
       <div>
         <Header cartCount={cart.length} />

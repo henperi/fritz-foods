@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../ui/Header';
 import Footer from '../ui/Footer';
-import TriggerModal from '../ui/TriggerModal';
+// import TriggerModal from '../ui/TriggerModal';
 import { getOrderHistory } from '../../actions/orderActions';
 import { formatDate } from '../../helpers/formaters';
 
-class OrderHistory extends PureComponent {
+export class OrderHistory extends PureComponent {
   componentDidMount() {
     const { getOrderHistory, user } = this.props;
     getOrderHistory(user.userId);
@@ -17,7 +17,7 @@ class OrderHistory extends PureComponent {
     const {
       order: { orderHistory },
     } = this.props;
-    console.log(orderHistory);
+    // console.log(orderHistory);
 
     const renderOrderHistory = orderHistory.map((order, index) => (
       <Fragment key={order.order_id}>

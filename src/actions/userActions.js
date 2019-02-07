@@ -6,12 +6,19 @@ export const setAuthUser = (payload = {}) => ({
   payload,
 });
 
-export const logoutUser = () => ({
-  type: REMOVE_AUTH_USER,
-  payload: {
-    isAuthenticated: false,
-  },
-});
+export const logoutUser = () => {
+  localStorage.removeItem('userToken');
+  localStorage.removeItem('userId');
+  localStorage.removeItem('fullname');
+  localStorage.removeItem('role');
+
+  return {
+    type: REMOVE_AUTH_USER,
+    payload: {
+      isAuthenticated: false,
+    },
+  };
+};
 
 const signupUrl = '/auth/signup';
 const loginUrl = '/auth/login';

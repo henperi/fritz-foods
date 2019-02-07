@@ -42,7 +42,7 @@ export const AddToCartModal = (props) => {
   );
 };
 
-const RemoveFromCart = (props) => {
+export const RemoveFromCart = (props) => {
   const {
     title, price, description, handleModal, id,
   } = props;

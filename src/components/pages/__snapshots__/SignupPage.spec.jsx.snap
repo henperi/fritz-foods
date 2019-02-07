@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The SignupPage Component Test Suite should render the <OrderHistory /> Component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="text-center contain-50"
+  >
+    <div
+      className="card card-shadow text-inverse"
+    >
+      <h2>
+        Create An Account To Get Started
+      </h2>
+      <p>
+        It only takes a few seconds to signup, Lets get started!
+      </p>
+      <form
+        className="form-data contain"
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-member text-left"
+        >
+          <span>
+            Email
+          </span>
+          <input
+            className="form-input email"
+            name="email"
+            onChange={[Function]}
+            placeholder="Enter Your Email"
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          className="form-member text-left"
+        >
+          <span>
+            Password
+          </span>
+          <input
+            className="form-input password"
+            name="password"
+            onChange={[Function]}
+            placeholder="Enter your password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="form-member text-left"
+        >
+          <span>
+            Repeat Password
+          </span>
+          <input
+            className="form-input passwordConfirmation"
+            name="passwordConfirmation"
+            onChange={[Function]}
+            placeholder="Repeat your password"
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="form-member text-left"
+        >
+          <span>
+            Fullname
+          </span>
+          <input
+            className="form-input fullname"
+            name="fullname"
+            onChange={[Function]}
+            placeholder="Enter Your Full Name"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-member text-left"
+        >
+          <span>
+            Mobile
+          </span>
+          <input
+            className="form-input mobile"
+            name="mobile"
+            onChange={[Function]}
+            placeholder="Enter Your Mobile"
+            type="tel"
+            value=""
+          />
+        </div>
+        <div
+          className="form-member text-left"
+        >
+          <span>
+            Address
+          </span>
+          <input
+            className="form-input address"
+            name="address"
+            onChange={[Function]}
+            placeholder="Enter Your Home Address"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          className="form-member"
+        >
+          <div
+            className="response-area"
+          />
+          <div
+            className="loader hide"
+          >
+            <i
+              className="fa fa-spinner fa-spin"
+            />
+          </div>
+          <button
+            className="btn btn-blue btn-block signup"
+            name="signup"
+            type="submit"
+          >
+            Signup
+          </button>
+        </div>
+        <p>
+          Already have an account?
+          <Link
+            className="link"
+            replace={false}
+            to="/signin"
+          >
+            Signin Instead
+          </Link>
+        </p>
+      </form>
+      <p>
+        Go back home
+        <Link
+          className="link"
+          replace={false}
+          to="/"
+        >
+          Home
+        </Link>
+      </p>
+    </div>
+  </div>
+</div>
+`;

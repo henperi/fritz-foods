@@ -1,5 +1,5 @@
-import React from 'react';
+// import React from 'react';
 
-const MainContent = () => <main className="main-content" />;
+// const MainContent = () => <main className="main-content" />;
 
-export default MainContent;
+// export default MainContent;
