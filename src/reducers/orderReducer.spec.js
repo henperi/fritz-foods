@@ -51,18 +51,4 @@ describe('orderReducer', () => {
     expect(orderReducer(initialState, action)).toMatchSnapshot({});
     expect(orderReducer(initialState, action)).toEqual({ orderHistory: [], orderedItems: [] });
   });
-
-  // it('should update the state and remove an error when type is REMOVE_AN_ERRORS and errorName is specified in the action', () => {
-  //   const initialState = {};
-  //   const action = removeAnError('username');
-  //   expect(errorsReducer(initialState, action)).toMatchSnapshot({});
-  //   expect(errorsReducer(initialState, action)).toEqual({ ...initialState, username: '' });
-  // });
-
-  // it('should clear all the errors in state when the type is REMOVE_AN_ERRORS', () => {
-  //   const initialState = {};
-  //   const action = clearErrors();
-  //   expect(errorsReducer(initialState, action)).toMatchSnapshot({});
-  //   expect(errorsReducer(initialState, action)).toEqual({});
-  // });
 });

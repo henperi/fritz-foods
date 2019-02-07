@@ -1,0 +1,8 @@
+{
+  "setupFiles": ["<rootDir>/enzyme.config.js"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "clearMocks": true,
+  "moduleNameMapper": {
+    "\\.(css|scss|png|jpg|jpeg|gif)$": "<rootDir>/src/__mocks__/styleMock.js"
+  }
+ }
