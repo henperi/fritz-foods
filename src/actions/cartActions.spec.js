@@ -5,6 +5,7 @@ import {
   removeFromCart,
   updateCartQty,
   toggleCartSlider,
+  emptyCart,
 } from './cartActions';
 
 describe('The cartActions Test Suite', () => {
@@ -62,6 +63,14 @@ describe('The cartActions Test Suite', () => {
 
     expect(action).toEqual({
       type: 'TOGGLE_CART_SLIDER',
+    });
+  });
+
+  it('should setup emptyCart action object', () => {
+    const action = emptyCart();
+
+    expect(action).toEqual({
+      type: 'EMPTY_CART',
     });
   });
 });

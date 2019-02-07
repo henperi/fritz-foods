@@ -3,7 +3,7 @@ import axiosInstance from '../utils/axiosInstance';
 import { emptyCart } from './cartActions';
 
 const placeOrder = (cartItems = {}, handleModal) => (dispatch) => {
-  console.log(cartItems);
+  // console.log(cartItems);
   const orderData = {
     foodItems: cartItems,
   };
@@ -16,10 +16,10 @@ const placeOrder = (cartItems = {}, handleModal) => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      console.log(errors);
-      console.log(response);
-      console.log('=======');
-      console.log(request);
+      // console.log(errors);
+      // console.log(response);
+      // console.log('=======');
+      // console.log(request);
 
       if (response.data) {
         return dispatch({
@@ -46,20 +46,20 @@ export const setOrderedItems = payload => ({
 });
 
 export const getOrderHistory = userId => (dispatch) => {
-  console.log(userId);
+  // console.log(userId);
   axiosInstance
     .get(`/users/${userId}/orders`)
     .then((response) => {
       const { data } = response;
-      console.log(data);
+      // console.log(data);
       // alert('getOrders');
       dispatch(setOrderHistory(data.orders));
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      console.log(response);
-      console.log('=======');
-      console.log(request);
+      // console.log(response);
+      // console.log('=======');
+      // console.log(request);
 
       if (response.data) {
         return dispatch({
@@ -76,7 +76,7 @@ export const getOrderHistory = userId => (dispatch) => {
 };
 
 export const getOrderedItems = (userId, orderId) => (dispatch) => {
-  console.log(userId, orderId);
+  // console.log(userId, orderId);
   axiosInstance
     .get(`/users/${userId}/orders/${orderId}`)
     .then((response) => {
@@ -87,9 +87,9 @@ export const getOrderedItems = (userId, orderId) => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      console.log(response);
-      console.log('=======');
-      console.log(request);
+      // console.log(response);
+      // console.log('=======');
+      // console.log(request);
 
       if (response.data) {
         return dispatch({

@@ -28,9 +28,6 @@ export const getMenu = () => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      console.log(response);
-      console.log('=======');
-      console.log(request);
 
       if (response.data) {
         return dispatch({
@@ -45,5 +42,3 @@ export const getMenu = () => (dispatch) => {
       });
     });
 };
-
-export const updateMenu = () => {};

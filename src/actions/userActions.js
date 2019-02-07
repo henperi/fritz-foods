@@ -1,8 +1,6 @@
 import axiosInstance, { setAxiosToken } from '../utils/axiosInstance';
 import { SET_ERRORS, SET_AUTH_USER, REMOVE_AUTH_USER } from './actionTypes';
 
-export const setUserToken = ({ userToken } = {}) => ({ type: 'SET_USER_TOKEN', userToken });
-
 export const setAuthUser = (payload = {}) => ({
   type: SET_AUTH_USER,
   payload,
@@ -15,7 +13,6 @@ export const logoutUser = () => ({
   },
 });
 
-// const baseApi = 'http://localhost:5000/api/v1';
 const signupUrl = '/auth/signup';
 const loginUrl = '/auth/login';
 
@@ -51,9 +48,9 @@ export const signupUser = (userData = {}, history) => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      console.log(response);
-      console.log('=======');
-      console.log(request);
+      // console.log(response);
+      // console.log('=======');
+      // console.log(request);
 
       if (response.data) {
         return dispatch({
@@ -73,7 +70,7 @@ export const loginUser = (userData = {}, history) => (dispatch) => {
   axiosInstance
     .post(loginUrl, userData)
     .then((response) => {
-      console.log('=============', response, '=============');
+      // console.log('=============', response, '=============');
       const { data } = response;
       const isAuthenticated = true;
       const { userToken } = data;
@@ -100,9 +97,9 @@ export const loginUser = (userData = {}, history) => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      console.log(response);
-      console.log('=======');
-      console.log(request);
+      // console.log(response);
+      // console.log('=======');
+      // console.log(request);
 
       if (response.data) {
         return dispatch({
