@@ -1,14 +1,15 @@
 {
-  "name": "indecision-app",
+  "name": "react-fast-food",
   "version": "1.0.0",
-  "description": "React testing app",
+  "description": "React Fast Food",
   "main": "index.js",
   "scripts": {
     "test": "jest --config=jest.config.json",
-    "test:watch": "jest --watchAll --config=jest.config.json",
-    "serve": "live-server public",
+    "test:watch": "jest --coverage --watchAll",
     "build": "webpack --watch",
-    "start:dev": "webpack-dev-server --open --hot"
+    "start:dev": "webpack-dev-server --open --hot",
+    "coverage": "npm run coveralls:coverage",
+    "coveralls:coverage": "nyc report --reporter=lcov"
   },
   "proxy": "http://localhost:5000/api/v1",
   "author": "Henry Izontimi",
@@ -50,6 +51,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
+    "sinon": "^7.2.3",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.2",
     "webpack-dev-server": "^3.1.14"

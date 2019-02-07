@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Signup Component Test Suite should render the <SignupForm /> Component 1`] = `
+<main>
+  <div
+    className="container hero-fullx"
+  >
+    <div
+      className="text-center contain-50"
+    >
+      <div
+        className="card card-shadow text-inverse"
+      >
+        <h2>
+          Login To Your Account
+        </h2>
+        <p>
+          Login to have a wonderful experience and enjoy amazing discounts
+        </p>
+        <form
+          className="form-data contain"
+          onSubmit={[Function]}
+        >
+          <div
+            className="form-member"
+          >
+            <input
+              className="form-input email"
+              name="email"
+              onChange={[Function]}
+              placeholder="Enter Email"
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            className="form-member"
+          >
+            <input
+              className="form-input password"
+              name="password"
+              onChange={[Function]}
+              placeholder="Enter Password"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            className="form-member"
+          >
+            <div
+              className="response-area"
+            />
+            <div
+              className="loader hide"
+            >
+              <i
+                className="fa fa-spinner fa-spin"
+              />
+            </div>
+            <button
+              className="btn btn-green btn-block login"
+              name="login"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+          <p>
+            Dont have an account?
+            <Link
+              className="link"
+              replace={false}
+              to="/signup"
+            >
+              Signup Instead
+            </Link>
+          </p>
+          <p>
+            Go back home
+            <Link
+              className="link"
+              replace={false}
+              to="/"
+            >
+              Home
+            </Link>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+`;

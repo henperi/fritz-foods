@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render TriggerModal correctly 1`] = `
+exports[`The Header Component Test Suite should render the <TriggerModal /> Component 1`] = `
 <span>
   <button
     className="triggerModal undefined"
@@ -8,8 +8,20 @@ exports[`should render TriggerModal correctly 1`] = `
     type="button"
   />
   <modal
+    cart={Array []}
     handleModal={[Function]}
     isOpen={false}
+    match={
+      Object {
+        "params": Object {},
+      }
+    }
+    order={
+      Object {
+        "orderHistory": Array [],
+      }
+    }
+    user={Object {}}
   />
 </span>
 `;

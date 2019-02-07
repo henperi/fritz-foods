@@ -3,22 +3,16 @@ import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/userActions';
 
-class Header extends PureComponent {
+export class Header extends PureComponent {
   handleLogout = (event) => {
     event.preventDefault();
-
     const { logoutUser: dispatchLogout, history, user } = this.props;
     dispatchLogout();
-
-    localStorage.removeItem('userToken');
-    localStorage.removeItem('userId');
-    localStorage.removeItem('fullname');
-    localStorage.removeItem('role');
   };
 
-  toggleNav = (event) => {
-    event.preventDefault();
-  };
+  // toggleNav = (event) => {
+  //   event.preventDefault();
+  // };
 
   toggleNav = (event) => {
     event.preventDefault();
