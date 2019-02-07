@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`errorReducer should return the default state if no action is specified 1`] = `Object {}`;
+
+exports[`errorReducer should update the state and set setErrors when type is SET_ERRORS and action is specified 1`] = `
+Object {
+  "0": Object {
+    "name": "invalid name",
+    "password": "invalid password",
+  },
+}
+`;

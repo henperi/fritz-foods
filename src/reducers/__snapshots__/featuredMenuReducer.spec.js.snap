@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`featuredMenuenuReducers should return the default state if no action is specified 1`] = `Object {}`;
+
+exports[`featuredMenuenuReducers should update the state and SET_MENU when type is SET_MENU and payload is specified 1`] = `
+Object {
+  "0": Object {
+    "food_id": 5,
+    "name": 500,
+  },
+  "1": Object {
+    "food_id": 6,
+    "name": "Beans",
+  },
+}
+`;

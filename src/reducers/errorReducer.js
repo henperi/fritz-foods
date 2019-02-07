@@ -1,8 +1,6 @@
 import { SET_ERRORS } from '../actions/actionTypes';
 
-const errorDefaultState = [];
-
-const userReducer = (state = errorDefaultState, action) => {
+const errorReducer = (state = [], action) => {
   switch (action.type) {
     case SET_ERRORS:
       return [...action.payload];
@@ -12,4 +10,4 @@ const userReducer = (state = errorDefaultState, action) => {
   }
 };
 
-export default userReducer;
+export default errorReducer;
