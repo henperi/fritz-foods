@@ -7,7 +7,7 @@ import TriggerModal from '../ui/TriggerModal';
 import { getOrderedItems } from '../../actions/orderActions';
 import { formatDate } from '../../helpers/formaters';
 
-class OrderHistory extends PureComponent {
+export class OrderItems extends PureComponent {
   componentDidMount() {
     const { getOrderedItems, user, match } = this.props;
     getOrderedItems(user.userId, match.params.orderId);
@@ -15,9 +15,9 @@ class OrderHistory extends PureComponent {
 
   render() {
     const {
-      order: { orderedItems },
+      order: { orderedItems = [] },
     } = this.props;
-    console.log(orderedItems);
+    // console.log(orderedItems);
 
     const renderOrderedItems = orderedItems.map((item, index) => (
       <Fragment key={item.item_id}>
@@ -65,7 +65,7 @@ class OrderHistory extends PureComponent {
                         <th>Item Status</th>
                       </tr>
                     </thead>
-                    {/* <tbody>{renderOrderHistory}</tbody>
+                    {/* <tbody>{renderOrderItems}</tbody>
                      */}
                     <tbody>{renderOrderedItems}</tbody>
                   </table>
@@ -99,4 +99,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getOrderedItems },
-)(OrderHistory);
+)(OrderItems);

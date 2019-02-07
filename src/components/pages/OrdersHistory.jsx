@@ -7,7 +7,7 @@ import TriggerModal from '../ui/TriggerModal';
 import { getOrderHistory, cancelOrder } from '../../actions/orderActions';
 import { formatDate } from '../../helpers/formaters';
 
-class OrderHistory extends PureComponent {
+export class OrderHistory extends PureComponent {
   componentDidMount() {
     const { getOrderHistory, user } = this.props;
     getOrderHistory(user.userId);
@@ -18,7 +18,6 @@ class OrderHistory extends PureComponent {
       order: { orderHistory },
       cancelOrder: dispatchCancelOrder,
     } = this.props;
-    // console.log(orderHistory, dispatchCancelOrder);
 
     const renderOrderHistory = orderHistory.map((order, index) => (
       <Fragment key={order.order_id}>

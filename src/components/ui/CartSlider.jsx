@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const CartSlider1 = (props) => {
+export const CartSlider1 = (props) => {
   const { cart } = props;
   return (
     <div className="cart card-shadow text-center">

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The OrderItems Component Test Suite should render the <OrderItems /> Component 1`] = `
+<div>
+  <Connect(Header) />
+  <main
+    className="main-content"
+  >
+    <section
+      className="m-t-40 text-center"
+    >
+      <h2
+        className="setup-page hide t-40"
+      >
+        Loading...
+        <i
+          className="fa fa-spin fa-spinner"
+        />
+      </h2>
+    </section>
+    <div
+      className="container hideX"
+    >
+      <section
+        className="card text-center"
+      >
+        <h2
+          className=""
+        >
+          Ordered Items
+        </h2>
+        <div
+          className="card card-shadow"
+        >
+          <div
+            className="table"
+          >
+            <table>
+              <thead
+                className=""
+              >
+                <tr>
+                  <th>
+                    Food Name
+                  </th>
+                  <th>
+                    Unit Price
+                  </th>
+                  <th>
+                    Quantity
+                  </th>
+                  <th>
+                    Amount
+                  </th>
+                  <th>
+                    Date Ordered
+                  </th>
+                  <th>
+                    Item Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody />
+            </table>
+          </div>
+        </div>
+        <div
+          className="text-center contain-50"
+        >
+          <div
+            className="response-area"
+          />
+          <div
+            className="hide loader"
+          >
+            <i
+              className="fa fa-spinner fa-spin"
+            />
+          </div>
+        </div>
+        <div>
+          <button
+            className="btn btn-primary btn-rounded"
+            type="button"
+          >
+            load more
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</div>
+`;

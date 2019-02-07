@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { signupUser } from '../../actions/userActions';
 
-class SignupPage extends Component {
+export class SignupPage extends Component {
   state = {
     email: '',
     password: '',

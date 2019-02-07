@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from './Modal/Modal';
 
-class TriggerModal extends Component {
+export class TriggerModal extends Component {
   state = {
     modal: {
       id: undefined,
@@ -15,8 +15,6 @@ class TriggerModal extends Component {
       id = '', type = '', title = '', price = '', description = '',
     } = this.props,
   ) => {
-    // event.preventDefault();
-
     if (event && event.target.classList.contains('triggerModal')) {
       return this.setState(() => ({
         modal: {

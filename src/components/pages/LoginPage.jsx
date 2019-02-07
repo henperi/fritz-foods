@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { loginUser } from '../../actions/userActions';
 
-class LoginPage extends Component {
+export class LoginPage extends Component {
   state = {
     email: '',
     password: '',
@@ -12,14 +12,12 @@ class LoginPage extends Component {
     errors: [],
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { user, history } = this.props;
-    // console.log('USER::', user);
     return user.isAuthenticated && history.push('/users/foods');
   }
 
   componentWillReceiveProps(nextProps) {
-    // if (nextProps.user.isAuthenticated) return nextProps.history.push('/users/food');
     return nextProps.errors && this.setState({ errors: nextProps.errors });
   }
 
