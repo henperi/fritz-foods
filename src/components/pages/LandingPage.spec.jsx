@@ -27,11 +27,4 @@ describe('The MenuPage Component Test Suite', () => {
     wrapper.instance().handleAddToCart({ id: 5, name: 'Rice', price: 500 });
     expect(sinon.stub(jest.fn(wrapper.instance().props.addToCart()))).not.toHaveBeenCalled();
   });
-
-  // it('should render exactly one form tag', () => {
-  //   expect(wrapper.find(LoadingSpinner)).toHaveLength(1);
-  // });
-  // // it('should render exactly two input tags', () => {
-  // //   expect(wrapper.find('input')).toHaveLength(2);
-  // // });
 });
