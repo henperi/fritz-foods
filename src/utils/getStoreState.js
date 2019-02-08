@@ -6,7 +6,7 @@ export default (store) => {
   if (localStorage.userToken) {
     setAxiosToken(localStorage.userToken);
 
-    store.dispatch(localStorage);
+    store.dispatch(setAuthUser(localStorage.userToken));
   }
 
   const foodItems = localStorage.foodItems ? JSON.parse(localStorage.foodItems) : [];
