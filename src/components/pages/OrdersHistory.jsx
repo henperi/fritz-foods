@@ -10,7 +10,7 @@ import { formatDate } from '../../helpers/formaters';
 export class OrderHistory extends PureComponent {
   componentDidMount() {
     const { getOrderHistory, user } = this.props;
-    getOrderHistory(user.userId);
+    getOrderHistory(user.user.userId);
   }
 
   render() {

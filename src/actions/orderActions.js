@@ -16,6 +16,7 @@ const placeOrder = (cartItems = {}, handleModal) => (dispatch) => {
     .post('/orders', orderData)
     .then((response) => {
       const { data } = response;
+      console.log(data);
       handleModal();
       dispatch(emptyCart());
     })
@@ -61,7 +62,7 @@ export const getOrderHistory = userId => (dispatch) => {
     .get(`/users/${userId}/orders`)
     .then((response) => {
       const { data } = response;
-      // console.log(data);
+      console.log(data);
       // alert('getOrders');
       dispatch(setOrderHistory(data.orders));
     })

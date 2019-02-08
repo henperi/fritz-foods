@@ -14,7 +14,7 @@ describe('The OrderHistory Component Test Suite', () => {
       getOrderHistory={getOrderHistory}
       order={{ orderHistory: [] }}
       match={{ params: {} }}
-      user={{}}
+      user={{ user: {} }}
     />,
   );
   it('should render the <OrderHistory /> Component', () => {
