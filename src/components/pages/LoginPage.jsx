@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { loginUser } from '../../actions/userActions';
+import Errors, { MainError } from '../ui/Errors';
 
 export class LoginPage extends Component {
   state = {
@@ -61,13 +62,7 @@ export class LoginPage extends Component {
                     placeholder="Enter Email"
                     onChange={this.onChange}
                   />
-                  {errors.map(
-                    error => error.param === 'email' && (
-                    <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                      {error.msg}
-                    </li>
-                    ),
-                  )}
+                  <Errors errors={errors} name="email" />
                 </div>
                 <div className="form-member">
                   <input
@@ -78,21 +73,11 @@ export class LoginPage extends Component {
                     placeholder="Enter Password"
                     onChange={this.onChange}
                   />
-                  {errors.map(
-                    error => error.param === 'password' && (
-                    <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                      {error.msg}
-                    </li>
-                    ),
-                  )}
+                  <Errors errors={errors} name="password" />
                 </div>
                 <div className="form-member">
                   <div className="response-area">
-                    {errors.length === 1 && errors[0].msg && (
-                      <li key={`${errors.length}-${Math.random()}`} className="list-item error">
-                        {errors[0].msg}
-                      </li>
-                    )}
+                    <MainError errors={errors} />
                   </div>
                   <div className={`loader ${isLoading ? '' : 'hide'}`}>
                     <i className="fa fa-spinner fa-spin" />

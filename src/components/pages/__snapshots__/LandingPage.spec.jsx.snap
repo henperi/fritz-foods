@@ -1,7 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render LandingPage correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`The MenuPage Component Test Suite should render the <MenuPage /> Component 1`] = `
+<div>
+  <Connect(Header) />
+  <main>
+    <Hero />
+    <div
+      className="p-h-5 text-center"
+    >
+      <p>
+        To enjoy amazing discounts and have a fun filled experience, login to your account!
+      </p>
+      <div>
+        <Link
+          className="btn btn-green"
+          replace={false}
+          to="/signin"
+        >
+          Login Now
+        </Link>
+        <Link
+          className="btn btn-blue"
+          replace={false}
+          to="/signup"
+        >
+          Signup Now
+        </Link>
+      </div>
+    </div>
+    <div
+      className="containerX"
+    >
+      <section>
+        <h2
+          className="text-center"
+        >
+          Todays Featured Foods
+        </h2>
+        <div
+          className="container food-menu"
+        />
+      </section>
+      <section>
+        <div
+          className="card text-center"
+        >
+          <h2>
+            Wanna See Our Menu And All Food Items?
+          </h2>
+          <p>
+            <a
+              className="btn btn-blue btn-rounded btn-bg"
+              href="users/foods.html"
+            >
+              View Menu
+            </a>
+          </p>
+        </div>
+        <div
+          className="text-center"
+        >
+          <p>
+            <a
+              className="btn btn-green"
+              href="signin.html"
+            >
+              Login Now!
+            </a>
+            <a
+              className="btn btn-blue"
+              href="signup.html"
+            >
+              Signup Now!
+            </a>
+          </p>
+        </div>
+      </section>
+      <section
+        className="flex-h text-center"
+      >
+        <AboutCard />
+        <ContactCard />
+      </section>
+    </div>
+  </main>
+  <Footer />
+</div>
 `;

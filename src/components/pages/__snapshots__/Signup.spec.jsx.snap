@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The SignupPage Component Test Suite should render the <OrderHistory /> Component 1`] = `
+exports[`rendering should render the component 1`] = `
 <div
   className="container"
 >

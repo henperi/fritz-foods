@@ -6,12 +6,20 @@ Object {
 }
 `;
 
-exports[`userReducer should update the state and REMOVE_AUTH_USER when type is REMOVE_AUTH_USER and payload is specified 1`] = `Object {}`;
+exports[`userReducer should update the state and REMOVE_AUTH_USER when type is REMOVE_AUTH_USER and payload is specified 1`] = `
+Object {
+  "isAuthenticated": false,
+  "user": Object {},
+}
+`;
 
 exports[`userReducer should update the state and set SET_AUTH_USER when type is SET_AUTH_USER and action is specified 1`] = `
 Object {
-  "name": 500,
-  "user_id": 5,
+  "isAuthenticated": true,
+  "user": Object {
+    "name": 500,
+    "user_id": 5,
+  },
 }
 `;
 
