@@ -10,7 +10,7 @@ import ContactCard from '../ui/ContactCard';
 import { getMenu } from '../../actions/menuActions';
 import { addToCart, toggleCartSlider } from '../../actions/cartActions';
 
-class LandingPage extends Component {
+export class LandingPage extends Component {
   state = {};
 
   componentDidMount() {

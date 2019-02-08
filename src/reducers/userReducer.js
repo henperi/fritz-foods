@@ -2,6 +2,7 @@ import { SIGNUP_USER, SET_AUTH_USER, REMOVE_AUTH_USER } from '../actions/actionT
 
 const userDefaultState = {
   isAuthenticated: false,
+  user: {},
 };
 
 const userReducer = (state = userDefaultState, action) => {
@@ -12,11 +13,14 @@ const userReducer = (state = userDefaultState, action) => {
       };
     case SET_AUTH_USER:
       return {
-        ...action.payload,
+        ...state,
+        isAuthenticated: !!action.payload,
+        user: { ...action.payload },
       };
     case REMOVE_AUTH_USER:
       return {
-        ...action.payload,
+        isAuthenticated: false,
+        user: {},
       };
 
     default:

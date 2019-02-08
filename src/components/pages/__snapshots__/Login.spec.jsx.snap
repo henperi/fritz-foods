@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The Signup Component Test Suite should render the <SignupForm /> Component 1`] = `
+exports[`rendering should render the component 1`] = `
 <main>
   <div
     className="container hero-fullx"
