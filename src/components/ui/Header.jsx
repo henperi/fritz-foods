@@ -10,10 +10,6 @@ export class Header extends PureComponent {
     dispatchLogout();
   };
 
-  // toggleNav = (event) => {
-  //   event.preventDefault();
-  // };
-
   toggleNav = (event) => {
     event.preventDefault();
     return (
