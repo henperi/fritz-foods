@@ -29,7 +29,10 @@ describe('userReducer', () => {
       payload: { user_id: 5, name: 500 },
     };
     expect(userReducer(initialState, action)).toMatchSnapshot({});
-    expect(userReducer(initialState, action)).toEqual({ name: 500, user_id: 5 });
+    expect(userReducer(initialState, action)).toEqual({
+      isAuthenticated: true,
+      user: { name: 500, user_id: 5 },
+    });
   });
 
   it('should update the state and REMOVE_AUTH_USER when type is REMOVE_AUTH_USER and payload is specified', () => {
@@ -38,6 +41,6 @@ describe('userReducer', () => {
       payload: 5,
     };
     expect(userReducer(initialState, action)).toMatchSnapshot({});
-    expect(userReducer(initialState, action)).toEqual({});
+    expect(userReducer(initialState, action)).toEqual({ isAuthenticated: false, user: {} });
   });
 });

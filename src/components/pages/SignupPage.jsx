@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { signupUser } from '../../actions/userActions';
+import Errors, { MainError } from '../ui/Errors';
 
 export class SignupPage extends Component {
   state = {
@@ -16,7 +17,7 @@ export class SignupPage extends Component {
     isLoading: false,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { user, history } = this.props;
 
     return user.isAuthenticated && history.push('/users/foods');
@@ -82,13 +83,7 @@ export class SignupPage extends Component {
                   placeholder="Enter Your Email"
                   onChange={this.onChange}
                 />
-                {errors.map(
-                  error => error.param === 'email' && (
-                  <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                    {error.msg}
-                  </li>
-                  ),
-                )}
+                <Errors errors={errors} name="email" />
               </div>
               <div className="form-member text-left">
                 <span>Password</span>
@@ -100,13 +95,7 @@ export class SignupPage extends Component {
                   placeholder="Enter your password"
                   onChange={this.onChange}
                 />
-                {errors.map(
-                  error => error.param === 'password' && (
-                  <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                    {error.msg}
-                  </li>
-                  ),
-                )}
+                <Errors errors={errors} name="password" />
               </div>
               <div className="form-member text-left">
                 <span>Repeat Password</span>
@@ -118,13 +107,7 @@ export class SignupPage extends Component {
                   placeholder="Repeat your password"
                   onChange={this.onChange}
                 />
-                {errors.map(
-                  error => error.param === 'passwordConfirmation' && (
-                  <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                    {error.msg}
-                  </li>
-                  ),
-                )}
+                <Errors errors={errors} name="passwordConfirmation" />
               </div>
               <div className="form-member text-left">
                 <span>Fullname</span>
@@ -136,13 +119,7 @@ export class SignupPage extends Component {
                   placeholder="Enter Your Full Name"
                   onChange={this.onChange}
                 />
-                {errors.map(
-                  error => error.param === 'fullname' && (
-                  <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                    {error.msg}
-                  </li>
-                  ),
-                )}
+                <Errors errors={errors} name="fullname" />
               </div>
               <div className="form-member text-left">
                 <span>Mobile</span>
@@ -154,13 +131,7 @@ export class SignupPage extends Component {
                   placeholder="Enter Your Mobile"
                   onChange={this.onChange}
                 />
-                {errors.map(
-                  error => error.param === 'mobile' && (
-                  <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                    {error.msg}
-                  </li>
-                  ),
-                )}
+                <Errors errors={errors} name="mobile" />
               </div>
               <div className="form-member text-left">
                 <span>Address</span>
@@ -172,21 +143,11 @@ export class SignupPage extends Component {
                   placeholder="Enter Your Home Address"
                   onChange={this.onChange}
                 />
-                {errors.map(
-                  error => error.param === 'address' && (
-                  <li key={`${error.param}-${Math.random()}`} className="list-item error">
-                    {error.msg}
-                  </li>
-                  ),
-                )}
+                <Errors errors={errors} name="address" />
               </div>
               <div className="form-member">
                 <div className="response-area">
-                  {errors.length === 1 && errors[0].msg && (
-                    <li key={`${errors.length}-${Math.random()}`} className="list-item error">
-                      {errors[0].msg}
-                    </li>
-                  )}
+                  <MainError errors={errors} />
                 </div>
                 <div className={`loader ${isLoading ? '' : 'hide'}`}>
                   <i className="fa fa-spinner fa-spin" />

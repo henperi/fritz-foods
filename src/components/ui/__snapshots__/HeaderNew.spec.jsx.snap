@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should render the component 1`] = `
+<header>
+  <nav
+    className="topnav"
+    id="myTopnav"
+  >
+    <div
+      className="left-nav"
+    >
+      <Link
+        className="brand"
+        replace={false}
+        to="/"
+      >
+        Fast Food Fast
+      </Link>
+    </div>
+    <div
+      className="right-nav"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        to="/users/foods"
+      >
+        Foods Menu
+      </NavLink>
+      <div
+        className="dropdown"
+      >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/users/my-orders"
+        >
+          My Orders
+        </NavLink>
+      </div>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="btn btn-green"
+        to="/users/my-cart"
+      >
+        My Cart
+        <i
+          className="fa fa-shopping-cart"
+        />
+         
+        <span
+          className="count cart-count"
+        >
+          0
+        </span>
+      </NavLink>
+      <a
+        className="btn-rounded logout"
+        href="/logout"
+        onClick={[Function]}
+      >
+        Logout
+      </a>
+      <a
+        className="icon"
+        href="/"
+        onClick={[Function]}
+      >
+        ☰
+      </a>
+    </div>
+  </nav>
+</header>
+`;
