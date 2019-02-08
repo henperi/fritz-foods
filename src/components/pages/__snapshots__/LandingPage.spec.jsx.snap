@@ -87,9 +87,3 @@ exports[`The MenuPage Component Test Suite should render the <MenuPage /> Compon
   <Footer />
 </div>
 `;
-
-exports[`should render LandingPage correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
