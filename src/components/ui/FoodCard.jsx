@@ -12,7 +12,7 @@ export const DefaultFood = props => (
         <div className="item-title">
           {props.food_name}
           <span className="badge price">
-              &#8358;
+            &#8358;
             {props.unit_price}
           </span>
         </div>
@@ -20,14 +20,10 @@ export const DefaultFood = props => (
           <Link to="/">{props.food_cat}</Link>
         </div>
         <div className="item-description">{props.description}</div>
-        <span className="item-description link">More Details</span>
+        <span className="item-description link hide">More Details</span>
       </div>
     </div>
     <div>
-      <NavLink to={`/users/foods/${props.food_id}`} className="btn btn-primary">
-          Order Now
-      </NavLink>
-
       <TriggerModal
         type="addToCart"
         id={props.food_id}
