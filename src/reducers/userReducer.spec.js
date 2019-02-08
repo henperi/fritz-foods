@@ -31,7 +31,8 @@ describe('userReducer', () => {
     expect(userReducer(initialState, action)).toMatchSnapshot({});
     expect(userReducer(initialState, action)).toEqual({
       isAuthenticated: true,
-      user: { name: 500, user_id: 5 },
+      name: 500,
+      user_id: 5,
     });
   });
 
@@ -41,6 +42,6 @@ describe('userReducer', () => {
       payload: 5,
     };
     expect(userReducer(initialState, action)).toMatchSnapshot({});
-    expect(userReducer(initialState, action)).toEqual({ isAuthenticated: false, user: {} });
+    expect(userReducer(initialState, action)).toEqual({ isAuthenticated: false });
   });
 });
