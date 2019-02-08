@@ -41,21 +41,13 @@ exports[`should render Header correctly 1`] = `
         className="item-description"
       />
       <span
-        className="item-description link"
+        className="item-description link hide"
       >
         More Details
       </span>
     </div>
   </div>
   <div>
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="btn btn-primary"
-      to="/users/foods/undefined"
-    >
-      Order Now
-    </NavLink>
     <TriggerModal
       triggerClass="btn btn-blue"
       triggerName="Add To Cart"
