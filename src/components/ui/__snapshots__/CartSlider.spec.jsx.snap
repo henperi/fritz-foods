@@ -35,12 +35,13 @@ exports[`should render CartSlider correctly 1`] = `
   <div
     className="container"
   >
-    <a
+    <Link
       className="btn btn-sm btn-green"
-      href="my-cart.html"
+      replace={false}
+      to="/users/my-cart"
     >
       View
-    </a>
+    </Link>
   </div>
 </div>
 `;

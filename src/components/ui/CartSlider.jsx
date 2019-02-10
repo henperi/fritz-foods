@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const CartSlider1 = (props) => {
   const { cart, slideCart } = props;
@@ -22,9 +23,9 @@ export const CartSlider1 = (props) => {
         Items added
       </div>
       <div className="container">
-        <a href="my-cart.html" className="btn btn-sm btn-green">
+        <Link to="/users/my-cart" className="btn btn-sm btn-green">
           View
-        </a>
+        </Link>
       </div>
     </div>
   );
