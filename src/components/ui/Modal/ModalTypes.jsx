@@ -67,7 +67,8 @@ export const RemoveFromCart = (props) => {
           props.removeFromCart(id);
         }}
         type="button"
-        className="btn btn-red btn-block btn-rounded btn-bg"
+        id="remove"
+        className="btn remove btn-red btn-block btn-rounded btn-bg"
       >
         Remove From Cart
       </button>

@@ -6,7 +6,7 @@ import LoadingSpinner from '../ui/LoadingSpinner';
 import { DefaultFood } from '../ui/FoodCard';
 import { ViewMore1 } from '../ui/ViewMore';
 import { getMenu } from '../../actions/menuActions';
-import { addToCart, toggleCartSlider } from '../../actions/cartActions';
+import { addToCart, toggleCartSlider, slideCart } from '../../actions/cartActions';
 
 export class MenuPage extends Component {
   state = {
@@ -28,10 +28,16 @@ export class MenuPage extends Component {
     const {
       addToCart: dispatchAddToCart,
       toggleCartSlider: dispatchToggleCartSlidder,
+      slideCart: dispatchSlideCart,
     } = this.props;
 
     dispatchAddToCart(id, name, price);
     dispatchToggleCartSlidder();
+    dispatchSlideCart();
+    setTimeout(() => {
+      dispatchSlideCart();
+    }, 2000);
+
     return handleModal && handleModal();
   };
 
@@ -71,5 +77,10 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getMenu, addToCart, toggleCartSlider },
+  {
+    getMenu,
+    addToCart,
+    toggleCartSlider,
+    slideCart,
+  },
 )(MenuPage);

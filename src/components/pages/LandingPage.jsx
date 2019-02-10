@@ -8,7 +8,7 @@ import Hero from '../ui/Hero';
 import AboutCard from '../ui/AboutCard';
 import ContactCard from '../ui/ContactCard';
 import { getMenu } from '../../actions/menuActions';
-import { addToCart, toggleCartSlider } from '../../actions/cartActions';
+import { addToCart, toggleCartSlider, slideCart } from '../../actions/cartActions';
 
 export class LandingPage extends Component {
   state = {};
@@ -27,10 +27,16 @@ export class LandingPage extends Component {
     const {
       addToCart: dispatchAddToCart,
       toggleCartSlider: dispatchToggleCartSlidder,
+      slideCart: dispatchSlideCart,
     } = this.props;
 
     dispatchAddToCart(id, name, price);
     dispatchToggleCartSlidder();
+    dispatchSlideCart();
+
+    setTimeout(() => {
+      dispatchSlideCart();
+    }, 2000);
     return handleModal && handleModal();
   };
 
@@ -39,7 +45,7 @@ export class LandingPage extends Component {
     return (
       <div>
         <Header />
-        <main>
+        <main className="main">
           <Hero />
           <div className="p-h-5 text-center">
             <p>
@@ -114,5 +120,10 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getMenu, addToCart, toggleCartSlider },
+  {
+    getMenu,
+    addToCart,
+    toggleCartSlider,
+    slideCart,
+  },
 )(LandingPage);

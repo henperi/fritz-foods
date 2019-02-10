@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`slideCartReducers should return the default state if no action is specified 1`] = `
+Object {
+  "slide": false,
+}
+`;
+
+exports[`slideCartReducers should set the slideCart state to true when type is SLIDE_CART and payload is specified 1`] = `
+Object {
+  "slide": true,
+}
+`;
