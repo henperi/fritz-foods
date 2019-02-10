@@ -1,5 +1,9 @@
 import {
-  ADD_TO_CART, REMOVE_FROM_CART, TOGGLE_CART_SLIDER, SET_CURRENT_CART,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  TOGGLE_CART_SLIDER,
+  SET_CURRENT_CART,
+  SLIDE_CART,
 } from './actionTypes';
 
 export const setCurrentCart = payload => ({
@@ -7,13 +11,14 @@ export const setCurrentCart = payload => ({
   payload,
 });
 
+export const slideCart = () => ({ type: SLIDE_CART });
+
 export const addToCart = (id, name, price) => ({
   type: ADD_TO_CART,
   id,
   name,
   price,
 });
-
 export const removeFromCart = id => ({ type: REMOVE_FROM_CART, id });
 
 export const updateCartQty = (id, updates) => ({

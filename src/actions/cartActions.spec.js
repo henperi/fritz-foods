@@ -6,6 +6,7 @@ import {
   updateCartQty,
   toggleCartSlider,
   emptyCart,
+  slideCart,
 } from './cartActions';
 
 describe('The cartActions Test Suite', () => {
@@ -63,6 +64,14 @@ describe('The cartActions Test Suite', () => {
 
     expect(action).toEqual({
       type: 'TOGGLE_CART_SLIDER',
+    });
+  });
+
+  it('should setup slideCart action object', () => {
+    const action = slideCart();
+
+    expect(action).toEqual({
+      type: 'SLIDE_CART',
     });
   });
 

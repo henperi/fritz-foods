@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should render the component 1`] = `
+<div>
+  <h2
+    className="text-center"
+  >
+    You are about to place an order
+  </h2>
+  <form
+    className=" card card-shadow"
+    method="POST"
+  >
+    <div
+      className=""
+    >
+      <h3>
+        Are you sure you want to order all the items in cart?
+      </h3>
+      <button
+        className="btn btn-green btn-rounded btn-bg close-button "
+        onClick={[Function]}
+        type="button"
+      >
+        Proceed
+      </button>
+      <button
+        className="close-button btn btn-primary btn-rounded btn-bg"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+`;

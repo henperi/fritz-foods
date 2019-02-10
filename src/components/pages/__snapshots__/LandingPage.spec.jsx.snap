@@ -3,7 +3,9 @@
 exports[`The MenuPage Component Test Suite should render the <MenuPage /> Component 1`] = `
 <div>
   <Connect(Header) />
-  <main>
+  <main
+    className="main"
+  >
     <Hero />
     <div
       className="p-h-5 text-center"
@@ -60,20 +62,22 @@ exports[`The MenuPage Component Test Suite should render the <MenuPage /> Compon
         <div
           className="text-center"
         >
-          <p>
-            <a
+          <div>
+            <Link
               className="btn btn-green"
-              href="signin.html"
+              replace={false}
+              to="/signin"
             >
-              Login Now!
-            </a>
-            <a
+              Login Now
+            </Link>
+            <Link
               className="btn btn-blue"
-              href="signup.html"
+              replace={false}
+              to="/signup"
             >
-              Signup Now!
-            </a>
-          </p>
+              Signup Now
+            </Link>
+          </div>
         </div>
       </section>
       <section

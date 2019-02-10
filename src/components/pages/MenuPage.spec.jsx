@@ -3,14 +3,19 @@ import React from 'react';
 import sinon from 'sinon';
 import { MenuPage } from './MenuPage';
 import { getMenu } from '../../actions/menuActions';
-import { addToCart, toggleCartSlider } from '../../actions/cartActions';
+import { addToCart, toggleCartSlider, slideCart } from '../../actions/cartActions';
 import LoadingSpinner from '../ui/LoadingSpinner';
 // import { loginUser } from '../../actions/userActions';
 // import SignupForm from './SignupForm';
 
 describe('The MenuPage Component Test Suite', () => {
   const wrapper = shallow(
-    <MenuPage getMenu={getMenu} addToCart={addToCart} toggleCartSlider={toggleCartSlider} />,
+    <MenuPage
+      getMenu={getMenu}
+      addToCart={addToCart}
+      toggleCartSlider={toggleCartSlider}
+      slideCart={slideCart}
+    />,
   );
   it('should render the <MenuPage /> Component', () => {
     expect(wrapper.length).toBe(1);

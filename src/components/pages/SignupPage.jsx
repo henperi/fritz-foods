@@ -158,6 +158,7 @@ export class SignupPage extends Component {
               </div>
               <p>
                 Already have an account?
+                {' '}
                 <Link to="/signin" className="link">
                   Signin Instead
                 </Link>
@@ -165,6 +166,7 @@ export class SignupPage extends Component {
             </form>
             <p>
               Go back home
+              {' '}
               <Link to="/" className="link">
                 Home
               </Link>

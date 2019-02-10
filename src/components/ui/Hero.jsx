@@ -21,7 +21,7 @@ const Hero = () => (
           <button type="button" name="search" className="btn btn-primary">
             Search Food
           </button>
-          <NavLink to="/foods-menu" className="btn btn-blue">
+          <NavLink to="/users/foods" className="btn btn-blue">
             Our Menu
           </NavLink>
         </div>

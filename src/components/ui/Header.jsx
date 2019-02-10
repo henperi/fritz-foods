@@ -32,7 +32,7 @@ export class Header extends PureComponent {
     const guestNav = (
       <div className="right-nav">
         <NavLink to="/users/foods" className="">
-          Foods Menu
+          Menu
         </NavLink>
         {IndexLinks}
 
@@ -60,31 +60,31 @@ export class Header extends PureComponent {
     const userNav = (
       <div className="right-nav">
         <NavLink to="/users/foods" activeClassName="active">
-          Foods Menu
+          Menu
         </NavLink>
         {IndexLinks}
-        <div className="dropdown">
-          <NavLink to="/users/my-orders" activeClassName="active">
-            My Orders
-          </NavLink>
 
-          {/*
-            <div className="dropdown-content">
-            <NavLink to="/pending-orders">Pending Orders</NavLink>
-            <NavLink to="/completed-orders">Completed Orders</NavLink>
-            <NavLink to="/all-orders">All My Orders</NavLink>
-            </div>
-          */}
-        </div>
         {/*        <NavLink to="/my-profile" className="">
           My Profile
         </NavLink> */}
-        <NavLink className="btn btn-green" to="/users/my-cart">
-          My Cart
-          <i className="fa fa-shopping-cart" />
-          {' '}
-          <span className="count cart-count">{cartCount}</span>
-        </NavLink>
+        <div className="dropdown">
+          <NavLink activeClassName="active" to="/users/my-cart">
+            <i className="fa fa-shopping-cart" />
+            {' '}
+            <span className="count cart-count">{cartCount}</span>
+          </NavLink>
+          <NavLink to="/users/my-orders" activeClassName="active">
+            My Orders
+          </NavLink>
+        </div>
+
+        {/*
+          <div className="dropdown-content">
+          <NavLink to="/pending-orders">Pending Orders</NavLink>
+          <NavLink to="/completed-orders">Completed Orders</NavLink>
+          <NavLink to="/all-orders">All My Orders</NavLink>
+          </div>
+        */}
         <a onClick={this.handleLogout} href="/logout" className="btn-rounded logout">
           Logout
         </a>
@@ -102,7 +102,7 @@ export class Header extends PureComponent {
     const adminNav = (
       <div className="right-nav">
         <NavLink to="/admins/foods" className="active">
-          Foods Menu
+          Menu
         </NavLink>
         {IndexLinks}
         <div className="dropdown">

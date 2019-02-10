@@ -2,7 +2,7 @@
 
 exports[`should render CartSlider correctly 1`] = `
 <div
-  className="cart card-shadow text-center"
+  className="cart card-shadow text-center false"
 >
   <div
     className="right-nav close-button"
@@ -15,10 +15,11 @@ exports[`should render CartSlider correctly 1`] = `
   <div
     className="container"
   >
+    My Cart
+     
     <i
       className="fa fa-shopping-cart"
     />
-    My Cart
   </div>
   <div
     className="card text-inverse"
@@ -34,12 +35,13 @@ exports[`should render CartSlider correctly 1`] = `
   <div
     className="container"
   >
-    <a
+    <Link
       className="btn btn-sm btn-green"
-      href="my-cart.html"
+      replace={false}
+      to="/users/my-cart"
     >
       View
-    </a>
+    </Link>
   </div>
 </div>
 `;

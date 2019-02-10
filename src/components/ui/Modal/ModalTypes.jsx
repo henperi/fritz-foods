@@ -6,7 +6,6 @@ export const AddToCartModal = (props) => {
   const {
     id, title, price, description, food_name, handleModal,
   } = props;
-  // console.log('insideAddToCart', props);
   return (
     <div>
       <h2 className="text-center">Add this food item to existing Cart</h2>
@@ -25,7 +24,7 @@ export const AddToCartModal = (props) => {
 
       <button
         type="button"
-        onClick={() => props.handleAddToCart(id, food_name, price)}
+        onClick={() => props.handleAddToCart(id, food_name, price, handleModal)}
         className="btn btn-blue btn-block btn-rounded btn-bg"
       >
         Add To Cart
@@ -68,7 +67,8 @@ export const RemoveFromCart = (props) => {
           props.removeFromCart(id);
         }}
         type="button"
-        className="btn btn-red btn-block btn-rounded btn-bg"
+        id="remove"
+        className="btn remove btn-red btn-block btn-rounded btn-bg"
       >
         Remove From Cart
       </button>
@@ -84,27 +84,6 @@ export const RemoveFromCart = (props) => {
   );
 };
 
-// export const PlaceOrderModal = props => (
-//   <div>
-//     <h2 className="text-center">You are about to place an order</h2>
-//     <form onSubmit={() => {}} method="POST" className=" card card-shadow">
-//       <div className="">
-//         <h3>Are you sure you want to order all the items in cart?</h3>
-//         <button type="button" className="btn btn-green btn-rounded btn-bg">
-//           Proceed
-//         </button>
-//         <button
-//           onClick={props.handleModal}
-//           type="button"
-//           className="close-button btn btn-primary btn-rounded btn-bg"
-//         >
-//           Cancel
-//         </button>
-//       </div>
-//     </form>
-//   </div>
-// );
-
 const mapStateToProps = state => ({
   cart: state.cart,
 });
@@ -113,31 +92,3 @@ export const RemoveFromCartModal = connect(
   mapStateToProps,
   { removeFromCart },
 )(RemoveFromCart);
-
-export const SignUpModal = (props) => {
-  const { handleModal } = props;
-
-  return (
-    <div>
-      <h2 className="text-center">Signup Now</h2>
-      <div className="content-div">
-        <div className="item-description">
-          <input />
-        </div>
-      </div>
-      <span>
-        <button type="button" className="btn btn-green btn-blockX btn-rounded btn-bg">
-          Sign Up
-        </button>
-
-        <button
-          onClick={handleModal}
-          type="button"
-          className="close-button btn btn-default btn-blockX btn-rounded btn-bg"
-        >
-          Cancel
-        </button>
-      </span>
-    </div>
-  );
-};

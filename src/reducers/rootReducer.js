@@ -6,6 +6,7 @@ import errorReducer from './errorReducer';
 import menuReducer from './menuReducer';
 import featuredMenuReducer from './featuredMenuReducer';
 import orderReducer from './orderReducer';
+import slideCartReducer from './slideCartReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   menu: menuReducer,
   featuredMenu: featuredMenuReducer,
   order: orderReducer,
+  slideCart: slideCartReducer,
 });
 
 export default rootReducer;

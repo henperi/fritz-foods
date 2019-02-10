@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`rendering should render AddToCartComponent the component 1`] = `
+<div>
+  <h2
+    className="text-center"
+  >
+    Add this food item to existing Cart
+  </h2>
+  <div
+    className="content-div"
+  >
+    <div
+      className="item-title"
+    >
+      <span
+        className="badge price"
+      >
+        ₦
+      </span>
+    </div>
+    <div
+      className="item-description"
+    >
+      <p />
+    </div>
+  </div>
+  <button
+    className="btn btn-blue btn-block btn-rounded btn-bg"
+    onClick={[Function]}
+    type="button"
+  >
+    Add To Cart
+  </button>
+  <button
+    className="close-button btn btn-primary btn-block btn-rounded btn-bg"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    Cancel
+  </button>
+</div>
+`;
+
 exports[`should render ModalTypes correctly 1`] = `
 <div>
   <h2
@@ -45,37 +87,4 @@ exports[`should render ModalTypes correctly 2`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>
-`;
-
-exports[`should render ModalTypes correctly 3`] = `
-<div>
-  <h2
-    className="text-center"
-  >
-    Signup Now
-  </h2>
-  <div
-    className="content-div"
-  >
-    <div
-      className="item-description"
-    >
-      <input />
-    </div>
-  </div>
-  <span>
-    <button
-      className="btn btn-green btn-blockX btn-rounded btn-bg"
-      type="button"
-    >
-      Sign Up
-    </button>
-    <button
-      className="close-button btn btn-default btn-blockX btn-rounded btn-bg"
-      type="button"
-    >
-      Cancel
-    </button>
-  </span>
-</div>
 `;

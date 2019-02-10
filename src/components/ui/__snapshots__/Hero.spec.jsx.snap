@@ -39,7 +39,7 @@ exports[`should render Hero correctly 1`] = `
           activeClassName="active"
           aria-current="page"
           className="btn btn-blue"
-          to="/foods-menu"
+          to="/users/foods"
         >
           Our Menu
         </NavLink>
