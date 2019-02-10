@@ -161,6 +161,7 @@ exports[`The SignupPage Component Test Suite should render the <OrderHistory /> 
         </div>
         <p>
           Already have an account?
+           
           <Link
             className="link"
             replace={false}
@@ -172,6 +173,7 @@ exports[`The SignupPage Component Test Suite should render the <OrderHistory /> 
       </form>
       <p>
         Go back home
+         
         <Link
           className="link"
           replace={false}

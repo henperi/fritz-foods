@@ -80,6 +80,7 @@ exports[`The Signup Component Test Suite should render the <SignupForm /> Compon
           </div>
           <p>
             Dont have an account?
+             
             <Link
               className="link"
               replace={false}
@@ -90,6 +91,7 @@ exports[`The Signup Component Test Suite should render the <SignupForm /> Compon
           </p>
           <p>
             Go back home
+             
             <Link
               className="link"
               replace={false}

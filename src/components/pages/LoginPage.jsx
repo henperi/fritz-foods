@@ -88,12 +88,14 @@ export class LoginPage extends Component {
                 </div>
                 <p>
                   Dont have an account?
+                  {' '}
                   <Link to="/signup" className="link">
                     Signup Instead
                   </Link>
                 </p>
                 <p>
                   Go back home
+                  {' '}
                   <Link to="/" className="link">
                     Home
                   </Link>

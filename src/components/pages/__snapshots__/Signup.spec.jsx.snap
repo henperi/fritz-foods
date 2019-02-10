@@ -161,6 +161,7 @@ exports[`rendering should render the component 1`] = `
         </div>
         <p>
           Already have an account?
+           
           <Link
             className="link"
             replace={false}
@@ -172,6 +173,7 @@ exports[`rendering should render the component 1`] = `
       </form>
       <p>
         Go back home
+         
         <Link
           className="link"
           replace={false}
