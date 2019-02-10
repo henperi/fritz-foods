@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link as ScrollTo, animateScroll as scroll } from 'react-scroll';
 import { logoutUser } from '../../actions/userActions';
 
 export class Header extends PureComponent {
@@ -24,8 +25,12 @@ export class Header extends PureComponent {
 
     const IndexLinks = `${window.origin}/` === window.location.href && (
       <Fragment>
-        <NavLink to="#about">About Us</NavLink>
-        <NavLink to="#contact">Contact Us</NavLink>
+        <ScrollTo activeClass="active" to="about" spy smooth offset={-70} duration={500}>
+          About Us
+        </ScrollTo>
+        <ScrollTo activeClass="active" to="contact" spy smooth offset={-70} duration={500}>
+          Contact Us
+        </ScrollTo>
       </Fragment>
     );
 

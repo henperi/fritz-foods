@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ContactCard = () => (
-  <div className="flex-item card" id="contact">
+  <div className="flex-item card contact" id="contact">
     <h2>Contact Us</h2>
     <form className="form-data container">
       <div className="form-member text-left">
