@@ -46,36 +46,3 @@ exports[`should render ModalTypes correctly 2`] = `
   <Component />
 </ContextConsumer>
 `;
-
-exports[`should render ModalTypes correctly 3`] = `
-<div>
-  <h2
-    className="text-center"
-  >
-    Signup Now
-  </h2>
-  <div
-    className="content-div"
-  >
-    <div
-      className="item-description"
-    >
-      <input />
-    </div>
-  </div>
-  <span>
-    <button
-      className="btn btn-green btn-blockX btn-rounded btn-bg"
-      type="button"
-    >
-      Sign Up
-    </button>
-    <button
-      className="close-button btn btn-default btn-blockX btn-rounded btn-bg"
-      type="button"
-    >
-      Cancel
-    </button>
-  </span>
-</div>
-`;

@@ -25,11 +25,26 @@ exports[`rendering should render the component 1`] = `
         aria-current="page"
         to="/users/foods"
       >
-        Foods Menu
+        Menu
       </NavLink>
       <div
         className="dropdown"
       >
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/users/my-cart"
+        >
+          <i
+            className="fa fa-shopping-cart"
+          />
+           
+          <span
+            className="count cart-count"
+          >
+            0
+          </span>
+        </NavLink>
         <NavLink
           activeClassName="active"
           aria-current="page"
@@ -38,23 +53,6 @@ exports[`rendering should render the component 1`] = `
           My Orders
         </NavLink>
       </div>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="btn btn-green"
-        to="/users/my-cart"
-      >
-        My Cart
-        <i
-          className="fa fa-shopping-cart"
-        />
-         
-        <span
-          className="count cart-count"
-        >
-          0
-        </span>
-      </NavLink>
       <a
         className="btn-rounded logout"
         href="/logout"

@@ -24,7 +24,7 @@ export class MenuPage extends Component {
     nextProps.cart && this.setState({ cart: nextProps.cart });
   }
 
-  handleAddToCart = (id, name, price) => {
+  handleAddToCart = (id, name, price, handleModal) => {
     const {
       addToCart: dispatchAddToCart,
       toggleCartSlider: dispatchToggleCartSlidder,
@@ -32,6 +32,7 @@ export class MenuPage extends Component {
 
     dispatchAddToCart(id, name, price);
     dispatchToggleCartSlidder();
+    return handleModal && handleModal();
   };
 
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { AddToCartModal, RemoveFromCartModal, SignUpModal } from './ModalTypes';
+import { AddToCartModal, RemoveFromCartModal } from './ModalTypes';
 
 test('should render ModalTypes correctly', () => {
   const wrapper = shallow(<AddToCartModal />);
@@ -8,9 +8,5 @@ test('should render ModalTypes correctly', () => {
 });
 test('should render ModalTypes correctly', () => {
   const wrapper = shallow(<RemoveFromCartModal />);
-  expect(wrapper).toMatchSnapshot();
-});
-test('should render ModalTypes correctly', () => {
-  const wrapper = shallow(<SignUpModal />);
   expect(wrapper).toMatchSnapshot();
 });

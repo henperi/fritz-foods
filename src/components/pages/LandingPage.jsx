@@ -23,7 +23,7 @@ export class LandingPage extends Component {
     nextProps.cart && this.setState({ cart: nextProps.cart });
   }
 
-  handleAddToCart = (id, name, price) => {
+  handleAddToCart = (id, name, price, handleModal) => {
     const {
       addToCart: dispatchAddToCart,
       toggleCartSlider: dispatchToggleCartSlidder,
@@ -31,10 +31,11 @@ export class LandingPage extends Component {
 
     dispatchAddToCart(id, name, price);
     dispatchToggleCartSlidder();
+    return handleModal && handleModal();
   };
 
   render() {
-    const { featuredMenu } = this.props;
+    const { featuredMenu, user = {} } = this.props;
     return (
       <div>
         <Header />
@@ -44,14 +45,16 @@ export class LandingPage extends Component {
             <p>
               To enjoy amazing discounts and have a fun filled experience, login to your account!
             </p>
-            <div>
-              <Link to="/signin" className="btn btn-green">
-                Login Now
-              </Link>
-              <Link to="/signup" className="btn btn-blue">
-                Signup Now
-              </Link>
-            </div>
+            {!user.isAuthenticated && (
+              <div>
+                <Link to="/signin" className="btn btn-green">
+                  Login Now
+                </Link>
+                <Link to="/signup" className="btn btn-blue">
+                  Signup Now
+                </Link>
+              </div>
+            )}
           </div>
 
           <div className="containerX">
@@ -78,14 +81,16 @@ export class LandingPage extends Component {
                 </p>
               </div>
               <div className="text-center">
-                <p>
-                  <a href="signin.html" className="btn btn-green">
-                    Login Now!
-                  </a>
-                  <a href="signup.html" className="btn btn-blue">
-                    Signup Now!
-                  </a>
-                </p>
+                {!user.isAuthenticated && (
+                  <div>
+                    <Link to="/signin" className="btn btn-green">
+                      Login Now
+                    </Link>
+                    <Link to="/signup" className="btn btn-blue">
+                      Signup Now
+                    </Link>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -104,6 +109,7 @@ export class LandingPage extends Component {
 const mapStateToProps = state => ({
   featuredMenu: state.featuredMenu,
   cart: state.cart,
+  user: state.user,
 });
 
 export default connect(

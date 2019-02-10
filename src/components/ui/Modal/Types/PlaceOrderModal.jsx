@@ -2,16 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import placeOrder from '../../../../actions/orderActions';
 
-const PlaceOrderModal = props => (
+export const PlaceOrderModal = props => (
   <div>
     <h2 className="text-center">You are about to place an order</h2>
-    <form onSubmit={() => {}} method="POST" className=" card card-shadow">
+    <form method="POST" className=" card card-shadow">
       <div className="">
         <h3>Are you sure you want to order all the items in cart?</h3>
         <button
           onClick={() => {
             props.placeOrder(props.cart, props.handleModal);
-            // alert('aa');
           }}
           type="button"
           className="btn btn-green btn-rounded btn-bg close-button "

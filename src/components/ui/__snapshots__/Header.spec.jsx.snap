@@ -26,7 +26,7 @@ exports[`The Header Component Test Suite should render the <OrderHistory /> Comp
         className=""
         to="/users/foods"
       >
-        Foods Menu
+        Menu
       </NavLink>
       <NavLink
         activeClassName="active"
