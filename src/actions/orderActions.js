@@ -6,9 +6,19 @@ import {
 } from './actionTypes';
 import axiosInstance from '../utils/axiosInstance';
 import { emptyCart } from './cartActions';
+import { showFlash, removeFlash } from './flashActions';
 
-const placeOrder = (cartItems = {}, handleModal) => (dispatch) => {
-  // console.log(cartItems);
+const placeOrder = (cartItems = {}, handleModal, user) => (dispatch) => {
+  if (!user.isAuthenticated) {
+    const flashData = {
+      title: 'Please Login',
+      message: 'Login to place your order',
+      flashType: 'flash-error',
+    };
+    dispatch(showFlash(flashData));
+    setTimeout(() => dispatch(removeFlash()), 2000);
+    handleModal();
+  }
   const orderData = {
     foodItems: cartItems,
   };
@@ -16,7 +26,16 @@ const placeOrder = (cartItems = {}, handleModal) => (dispatch) => {
     .post('/orders', orderData)
     .then((response) => {
       const { data } = response;
+
+      const flashData = {
+        title: 'Order submitted',
+        message: 'Order submitted',
+        flashType: 'flash-success',
+      };
+      dispatch(showFlash(flashData));
+      setTimeout(() => dispatch(removeFlash()), 2000);
       handleModal();
+
       dispatch(emptyCart());
     })
     .catch((errors) => {
