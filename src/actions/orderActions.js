@@ -29,7 +29,7 @@ const placeOrder = (cartItems = {}, handleModal, user) => (dispatch) => {
 
       const flashData = {
         title: 'Order submitted',
-        message: 'Order submitted',
+        message: 'Order submitted, Click My Orders on the navigation menu to see your order history',
         flashType: 'flash-success',
       };
       dispatch(showFlash(flashData));
