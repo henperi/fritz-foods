@@ -26,9 +26,14 @@ export class LoginPage extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  toggleLoader = () => {
+    this.setState(prevState => ({ isLoading: !prevState.isLoading }));
+  };
+
   onSubmit = (event) => {
     event.preventDefault();
-    this.setState({ isLoading: true });
+    // this.setState({ isLoading: true });
+    this.toggleLoader();
 
     const { email, password } = this.state;
 
@@ -38,7 +43,7 @@ export class LoginPage extends Component {
     };
 
     const { loginUser: dispatchLogin, history } = this.props;
-    dispatchLogin(loginData, history);
+    dispatchLogin(loginData, history, this.toggleLoader);
   };
 
   render() {

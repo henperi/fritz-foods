@@ -85,6 +85,12 @@ Item(s)
                     </thead>
                     {/* <tbody>{renderOrderHistory}</tbody> */}
                     <tbody>{renderOrderHistory}</tbody>
+                    {/* orderHistory.length > 0 ? (
+                    ) : (
+                      <div>
+                        <h2 className="text-center">No order history.</h2>
+                      </div>
+                    ) */}
                   </table>
                 </div>
               </div>

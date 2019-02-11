@@ -9,6 +9,7 @@ import AboutCard from '../ui/AboutCard';
 import ContactCard from '../ui/ContactCard';
 import { getMenu } from '../../actions/menuActions';
 import { addToCart, toggleCartSlider, slideCart } from '../../actions/cartActions';
+import toggleLoader from '../../actions/loaderAction';
 
 export class LandingPage extends Component {
   state = {};
@@ -66,15 +67,29 @@ export class LandingPage extends Component {
           <div className="containerX">
             <section>
               <h2 className="text-center">Todays Featured Foods</h2>
-              <div className="container food-menu">
-                {featuredMenu.map(singleFood => (
+              {featuredMenu.length > 0 ? (
+                <div className="container food-menu">
+                  {featuredMenu.map(singleFood => (
+                    <DefaultFood
+                      key={singleFood.food_id}
+                      {...singleFood}
+                      handleAddToCart={this.handleAddToCart}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="loader text-center">
+                  <i className="text-center fa fa-spinner fa-5x fa-spin" />
+                </div>
+              )}
+
+              {/* featuredMenu.map(singleFood => (
                   <DefaultFood
                     key={singleFood.food_id}
                     {...singleFood}
                     handleAddToCart={this.handleAddToCart}
                   />
-                ))}
-              </div>
+                )) */}
             </section>
 
             <section>
@@ -113,5 +128,6 @@ export default connect(
     addToCart,
     toggleCartSlider,
     slideCart,
+    toggleLoader,
   },
 )(LandingPage);

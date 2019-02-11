@@ -31,9 +31,13 @@ export class SignupPage extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  toggleLoader = () => {
+    this.setState(prevState => ({ isLoading: !prevState.isLoading }));
+  };
+
   onSubmit = (event) => {
     event.preventDefault();
-    this.setState({ isLoading: true });
+    this.toggleLoader();
 
     const {
       email, password, passwordConfirmation, fullname, mobile, address,
@@ -50,7 +54,7 @@ export class SignupPage extends Component {
 
     const { signupUser: dispatchSignup, history } = this.props;
 
-    dispatchSignup(signupData, history);
+    dispatchSignup(signupData, history, this.toggleLoader);
   };
 
   render() {

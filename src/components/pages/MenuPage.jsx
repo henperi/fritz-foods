@@ -51,15 +51,22 @@ export class MenuPage extends Component {
             <LoadingSpinner />
             <h1 className="text-center">Whats On Our Menu</h1>
             <section className="card">
-              <div className="food-menu">
-                {menu.map(singleFood => (
-                  <DefaultFood
-                    key={singleFood.food_id}
-                    {...singleFood}
-                    handleAddToCart={this.handleAddToCart}
-                  />
-                ))}
-              </div>
+              {menu.length > 0 ? (
+                <div className="food-menu">
+                  {menu.map(singleFood => (
+                    <DefaultFood
+                      key={singleFood.food_id}
+                      {...singleFood}
+                      handleAddToCart={this.handleAddToCart}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="loader text-center">
+                  <i className="text-center fa fa-spinner fa-5x fa-spin" />
+                </div>
+              )}
+
               <ViewMore1 />
             </section>
           </div>

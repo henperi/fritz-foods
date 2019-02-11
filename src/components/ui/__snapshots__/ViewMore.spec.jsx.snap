@@ -2,7 +2,7 @@
 
 exports[`should render ViewMore1 correctly 1`] = `
 <div
-  className="text-center"
+  className="text-center hide"
 >
   <button
     className="btn btn-primary btn-rounded"
