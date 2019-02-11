@@ -40,8 +40,12 @@ exports[`The MenuPage Component Test Suite should render the <MenuPage /> Compon
           Todays Featured Foods
         </h2>
         <div
-          className="container food-menu"
-        />
+          className="loader text-center"
+        >
+          <i
+            className="text-center fa fa-spinner fa-5x fa-spin"
+          />
+        </div>
       </section>
       <section>
         <div

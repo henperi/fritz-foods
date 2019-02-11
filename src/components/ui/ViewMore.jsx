@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const ViewMore1 = () => (
-  <div className="text-center">
+  <div className="text-center hide">
     <button type="button" className="btn btn-primary btn-rounded">
       View more
     </button>

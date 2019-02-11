@@ -3,17 +3,8 @@ import axiosInstance, { setAxiosToken } from '../utils/axiosInstance';
 import { SET_ERRORS, SET_AUTH_USER, REMOVE_AUTH_USER } from './actionTypes';
 import { removeFlash, showFlash } from './flashActions';
 
-// export const setAuthUser = (payload = {}) => ({
-//   type: SET_AUTH_USER,
-//   payload,
-// });
 export const setAuthUser = (token) => {
   const decodedToken = JWT.decode(token);
-  // const { userId, email, role, fullname } = decodedToken;
-
-  // configureLocalStorage.setAuthUser(token);
-  // remember to set axios auth token here
-
   localStorage.setItem('userToken', token);
   setAxiosToken(token);
 
@@ -44,7 +35,7 @@ export const logoutUser = () => {
 const signupUrl = '/auth/signup';
 const loginUrl = '/auth/login';
 
-export const signupUser = (userData = {}, history) => (dispatch) => {
+export const signupUser = (userData = {}, history, toggleLoader) => (dispatch) => {
   axiosInstance
     .post(signupUrl, userData)
     .then((response) => {
@@ -60,11 +51,13 @@ export const signupUser = (userData = {}, history) => (dispatch) => {
       };
       dispatch(showFlash(flashData));
       setTimeout(() => dispatch(removeFlash()), 2000);
+      toggleLoader();
 
       return history.push('/users/foods');
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
+      toggleLoader();
 
       if (response.data) {
         return dispatch({
@@ -80,13 +73,11 @@ export const signupUser = (userData = {}, history) => (dispatch) => {
     });
 };
 
-export const loginUser = (userData = {}, history) => (dispatch) => {
+export const loginUser = (userData = {}, history, toggleLoader) => (dispatch) => {
   axiosInstance
     .post(loginUrl, userData)
     .then((response) => {
-      // console.log('=============', response, '=============');
       const { data } = response;
-      // const isAuthenticated = true;
       const { userToken } = data;
 
       const flashData = {
@@ -96,7 +87,7 @@ export const loginUser = (userData = {}, history) => (dispatch) => {
       };
       dispatch(showFlash(flashData));
       setTimeout(() => dispatch(removeFlash()), 2000);
-
+      toggleLoader();
       dispatch(setAuthUser(userToken));
 
       return history.push('/users/foods');
@@ -104,6 +95,7 @@ export const loginUser = (userData = {}, history) => (dispatch) => {
     .catch((errors) => {
       const { response = {}, request } = errors;
 
+      toggleLoader();
       if (response.data) {
         return dispatch({
           type: SET_ERRORS,

@@ -118,13 +118,17 @@ export const CartPage = (props) => {
                 ) : (
                   <span className="text-red">Please login to place your order</span>
                 )) */}
-              {cart.length > 0 && (
+              {cart.length > 0 ? (
                 <TriggerModal
                   type="placeOrderModal"
                   triggerClass="btn btn-green btn-bg btn-rounded btn-block"
                   triggerName="Place Order"
                   {...props}
                 />
+              ) : (
+                <h4 className="text-red">
+                  Your cart is empty! Add items from the menu and come back here.
+                </h4>
               )}
             </div>
           </section>
