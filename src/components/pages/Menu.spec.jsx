@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import { shallow } from 'enzyme';
-import { MenuPage } from './MenuPage';
+import { MenuPage, mapStateToProps } from './MenuPage';
 
 describe('rendering', () => {
   let wrapper;
@@ -58,6 +58,11 @@ describe('rendering', () => {
     wrapper = shallow(<MenuPage {...props} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.length).toBe(1);
+  });
+
+  it('should test mapStateToProps', () => {
+    const state = mapStateToProps(props);
+    expect(state).toBeTruthy();
   });
 
   // it('should test for onchange', () => {

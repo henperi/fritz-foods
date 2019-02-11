@@ -100,7 +100,7 @@ export class LandingPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   featuredMenu: state.featuredMenu,
   cart: state.cart,
   user: state.user,

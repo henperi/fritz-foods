@@ -16,15 +16,7 @@ describe('The Errors component Test Suite', () => {
     const wrapper = shallow(<FlashMsg {...props} />);
 
     expect(wrapper.length).toBe(1);
-    // expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find(FlashMsg)).toBeDefined();
   });
-
-  // it('should format a date and return it to standard callendar dates', () => {
-  //   const wrapper = shallow(<Errors errors={[{ param: 'email' }]} name="email" />);
-
-  //   expect(wrapper.length).toBe(1);
-  //   // expect(wrapper).toMatchSnapshot();
-  //   expect(wrapper.find(FlashMsg)).toBeDefined();
-  // });
 });
