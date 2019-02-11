@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { AddToCartModal, RemoveFromCartModal } from './ModalTypes';
+import { AddToCartModal, RemoveFromCartModal, mapStateToProps } from './ModalTypes';
 
 test('should render ModalTypes correctly', () => {
   const wrapper = shallow(<AddToCartModal />);
@@ -46,5 +46,10 @@ describe('rendering', () => {
       resolve(wrapper.instance().onSubmit);
     });
     promise.then(() => expect(handleAddToCart).toHaveBeenCalledTimes(1));
+  });
+
+  it('should test mapStateToProps', () => {
+    const state = mapStateToProps(props);
+    expect(state).toBeTruthy();
   });
 });
