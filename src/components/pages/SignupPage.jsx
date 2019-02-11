@@ -189,7 +189,7 @@ SignupPage.defaultProps = {
   errors: [],
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   user: state.user,
   errors: state.errors,
 });

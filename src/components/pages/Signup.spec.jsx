@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import { shallow } from 'enzyme';
-import { SignupPage } from './SignupPage';
+import { SignupPage, mapStateToProps } from './SignupPage';
 
 describe('rendering', () => {
   let wrapper;
@@ -76,5 +76,10 @@ describe('rendering', () => {
       resolve(wrapper.instance().onSubmit);
     });
     promise.then(() => expect(signupUser).toHaveBeenCalledTimes(1));
+  });
+
+  it('should test mapStateToProps', () => {
+    const state = mapStateToProps(props);
+    expect(state).toBeTruthy();
   });
 });
