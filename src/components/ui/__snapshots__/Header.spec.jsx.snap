@@ -68,6 +68,7 @@ exports[`The Header Component Test Suite should render the <OrderHistory /> Comp
         ☰
       </a>
     </div>
+    <FlashMessage />
   </nav>
 </header>
 `;

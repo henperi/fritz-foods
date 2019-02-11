@@ -68,6 +68,7 @@ exports[`rendering should render the component 1`] = `
         ☰
       </a>
     </div>
+    <FlashMessage />
   </nav>
 </header>
 `;
