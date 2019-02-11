@@ -6,7 +6,7 @@ import Footer from '../ui/Footer';
 import TriggerModal from '../ui/TriggerModal';
 
 export const CartPage = (props) => {
-  const { cart } = props;
+  const { cart, user } = props;
   let total = 0;
 
   const renderCartItems = cart.map((item, index) => {
@@ -107,6 +107,17 @@ export const CartPage = (props) => {
               <div className="hide loader">
                 <i className="fa fa-spinner fa-spin" />
               </div>
+              {/* cart.length > 0
+                && (user.isAuthenticated ? (
+                  <TriggerModal
+                    type="placeOrderModal"
+                    triggerClass="btn btn-green btn-bg btn-rounded btn-block"
+                    triggerName="Place Order"
+                    {...props}
+                  />
+                ) : (
+                  <span className="text-red">Please login to place your order</span>
+                )) */}
               {cart.length > 0 && (
                 <TriggerModal
                   type="placeOrderModal"
@@ -126,6 +137,7 @@ export const CartPage = (props) => {
 
 const mapStateToProps = state => ({
   cart: state.cart,
+  user: state.user,
 });
 
 export default connect(mapStateToProps)(CartPage);

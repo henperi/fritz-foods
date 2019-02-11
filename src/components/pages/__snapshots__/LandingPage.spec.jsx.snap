@@ -51,33 +51,14 @@ exports[`The MenuPage Component Test Suite should render the <MenuPage /> Compon
             Wanna See Our Menu And All Food Items?
           </h2>
           <p>
-            <a
+            <Link
               className="btn btn-blue btn-rounded btn-bg"
-              href="users/foods.html"
+              replace={false}
+              to="/users/foods"
             >
               View Menu
-            </a>
+            </Link>
           </p>
-        </div>
-        <div
-          className="text-center"
-        >
-          <div>
-            <Link
-              className="btn btn-green"
-              replace={false}
-              to="/signin"
-            >
-              Login Now
-            </Link>
-            <Link
-              className="btn btn-blue"
-              replace={false}
-              to="/signup"
-            >
-              Signup Now
-            </Link>
-          </div>
         </div>
       </section>
       <section

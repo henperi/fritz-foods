@@ -84,7 +84,7 @@ export const RemoveFromCart = (props) => {
   );
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cart: state.cart,
 });
 

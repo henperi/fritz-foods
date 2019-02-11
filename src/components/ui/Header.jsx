@@ -1,7 +1,9 @@
 import React, { PureComponent, Fragment } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link as ScrollTo, animateScroll as scroll } from 'react-scroll';
 import { logoutUser } from '../../actions/userActions';
+import FlashMessage from './FlashMsg';
 
 export class Header extends PureComponent {
   handleLogout = (event) => {
@@ -19,13 +21,18 @@ export class Header extends PureComponent {
   };
 
   render() {
-    const { user, cart } = this.props;
+    const { user, cart, flash } = this.props;
+    // console.log(flash);
     const cartCount = cart.length;
 
     const IndexLinks = `${window.origin}/` === window.location.href && (
       <Fragment>
-        <NavLink to="#about">About Us</NavLink>
-        <NavLink to="#contact">Contact Us</NavLink>
+        <ScrollTo activeClass="active" to="about" spy smooth offset={-70} duration={500}>
+          About Us
+        </ScrollTo>
+        <ScrollTo activeClass="active" to="contact" spy smooth offset={-70} duration={500}>
+          Contact Us
+        </ScrollTo>
       </Fragment>
     );
 
@@ -40,12 +47,13 @@ export class Header extends PureComponent {
           Signin
         </NavLink>
         <NavLink to="/signup">Signup</NavLink>
-        <NavLink className="btn btn-green" to="/users/my-cart">
-          My Cart
-          <i className="fa fa-shopping-cart" />
-          {' '}
-          <span className="count cart-count">{cartCount}</span>
-        </NavLink>
+        <div className="dropdown">
+          <NavLink activeClassName="active" to="/users/my-cart">
+            <i className="fa fa-shopping-cart" />
+            {' '}
+            <span className="count cart-count">{cartCount}</span>
+          </NavLink>
+        </div>
         <a
           onClick={(e) => {
             this.toggleNav(e);
@@ -85,9 +93,9 @@ export class Header extends PureComponent {
           <NavLink to="/all-orders">All My Orders</NavLink>
           </div>
         */}
-        <a onClick={this.handleLogout} href="/logout" className="btn-rounded logout">
+        <Link onClick={this.handleLogout} to="/signin" className="btn-rounded logout">
           Logout
-        </a>
+        </Link>
         <a
           onClick={(e) => {
             this.toggleNav(e);
@@ -147,6 +155,7 @@ export class Header extends PureComponent {
             </Link>
           </div>
           {nav}
+          <FlashMessage flashData={flash} />
         </nav>
       </header>
     );
@@ -156,6 +165,7 @@ export class Header extends PureComponent {
 const mapStateToProps = state => ({
   user: state.user,
   cart: state.cart,
+  flash: state.flash,
 });
 
 export default connect(

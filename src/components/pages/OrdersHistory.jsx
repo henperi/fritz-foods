@@ -51,34 +51,6 @@ Item(s)
             >
               Cancel Order
             </button>
-
-            <div className="modal" id="#cartModal">
-              <div className="modal-content">
-                <div className="text-center">
-                  <span className="close-button btn btn-primary btn-sm push-right">x</span>
-                  <h2 className="text-center">Cancel Your Order</h2>
-
-                  <div className="content-div">
-                    <h3 className="item-title link">Order(#32234)</h3>
-                    <h3 className="">Total Price &#8358;3,500</h3>
-                  </div>
-                  <form action="javascript:;" method="POST" className=" card card-shadow">
-                    <div className="">
-                      <h2>Are you sure you want to cancel your order?</h2>
-                      <button type="button" className="btn btn-red btn-rounded btn-bg">
-                        Cancel
-                      </button>
-                      <button
-                        type="button"
-                        className="close-button btn btn-primary btn-rounded btn-bg"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
           </td>
         </tr>
       </Fragment>
@@ -136,7 +108,7 @@ Item(s)
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   order: state.order,
   user: state.user,
 });

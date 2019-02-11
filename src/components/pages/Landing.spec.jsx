@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import { shallow } from 'enzyme';
-import { LandingPage } from './LandingPage';
+import { LandingPage, mapStateToProps } from './LandingPage';
 
 describe('rendering', () => {
   let wrapper;
@@ -53,6 +53,11 @@ describe('rendering', () => {
     wrapper = shallow(<LandingPage {...props} />);
     wrapper.instance().componentWillReceiveProps(nextProps);
     expect(spy).toHaveBeenCalled();
+  });
+
+  it('should test mapStateToProps', () => {
+    const state = mapStateToProps(props);
+    expect(state).toBeTruthy();
   });
 
   // it('should render the component', () => {

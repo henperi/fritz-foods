@@ -2,7 +2,7 @@
 
 exports[`should render AboutCard correctly 1`] = `
 <div
-  className="flex-item card"
+  className="flex-item card about"
   id="about"
 >
   <h2>

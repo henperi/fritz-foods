@@ -1,6 +1,7 @@
 import JWT from 'jsonwebtoken';
 import axiosInstance, { setAxiosToken } from '../utils/axiosInstance';
 import { SET_ERRORS, SET_AUTH_USER, REMOVE_AUTH_USER } from './actionTypes';
+import { removeFlash, showFlash } from './flashActions';
 
 // export const setAuthUser = (payload = {}) => ({
 //   type: SET_AUTH_USER,
@@ -52,6 +53,14 @@ export const signupUser = (userData = {}, history) => (dispatch) => {
 
       dispatch(setAuthUser(userToken));
 
+      const flashData = {
+        title: 'Signup was successful',
+        message: 'Welcome to Fast Food Fast',
+        flashType: 'flash-success',
+      };
+      dispatch(showFlash(flashData));
+      setTimeout(() => dispatch(removeFlash()), 2000);
+
       return history.push('/users/foods');
     })
     .catch((errors) => {
@@ -79,14 +88,14 @@ export const loginUser = (userData = {}, history) => (dispatch) => {
       const { data } = response;
       // const isAuthenticated = true;
       const { userToken } = data;
-      // const { fullname, role, userId } = data.userData;
 
-      // localStorage.setItem('userToken', userToken);
-      // localStorage.setItem('fullname', fullname);
-      // localStorage.setItem('role', role);
-      // localStorage.setItem('userId', userId);
-
-      // setAxiosToken(userToken);
+      const flashData = {
+        title: 'Login success',
+        message: 'You have logged in successfully',
+        flashType: 'flash-success',
+      };
+      dispatch(showFlash(flashData));
+      setTimeout(() => dispatch(removeFlash()), 2000);
 
       dispatch(setAuthUser(userToken));
 
@@ -94,10 +103,6 @@ export const loginUser = (userData = {}, history) => (dispatch) => {
     })
     .catch((errors) => {
       const { response = {}, request } = errors;
-      // console.log(errors);
-      // console.log(response);
-      // console.log('=======');
-      // console.log(request);
 
       if (response.data) {
         return dispatch({

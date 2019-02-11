@@ -2,7 +2,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { shallow } from 'enzyme';
 // import { configureMockStore } from 'redux-mock-store';
-import { LoginPage } from './LoginPage';
+import { LoginPage, mapStateToProps } from './LoginPage';
 
 describe('rendering', () => {
   let wrapper;
@@ -107,5 +107,10 @@ describe('rendering', () => {
       resolve(wrapper.instance().onSubmit);
     });
     promise.then(() => expect(loginUser).toHaveBeenCalledTimes(1));
+  });
+
+  it('should test mapStateToProps', () => {
+    const state = mapStateToProps(props);
+    expect(state).toBeTruthy();
   });
 });

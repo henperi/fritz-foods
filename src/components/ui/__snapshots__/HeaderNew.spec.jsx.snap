@@ -53,13 +53,14 @@ exports[`rendering should render the component 1`] = `
           My Orders
         </NavLink>
       </div>
-      <a
+      <Link
         className="btn-rounded logout"
-        href="/logout"
         onClick={[Function]}
+        replace={false}
+        to="/signin"
       >
         Logout
-      </a>
+      </Link>
       <a
         className="icon"
         href="/"
@@ -68,6 +69,7 @@ exports[`rendering should render the component 1`] = `
         ☰
       </a>
     </div>
+    <FlashMessage />
   </nav>
 </header>
 `;

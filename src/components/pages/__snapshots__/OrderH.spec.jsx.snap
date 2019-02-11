@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should render the component 1`] = `
+<div>
+  <Connect(Header) />
+  <main
+    className="main-content"
+  >
+    <section
+      className="m-t-40 text-center"
+    >
+      <h2
+        className="setup-page hide t-40"
+      >
+        Loading...
+        <i
+          className="fa fa-spin fa-spinner"
+        />
+      </h2>
+    </section>
+    <div
+      className="container hideX"
+    >
+      <section
+        className="card text-center"
+      >
+        <h2
+          className=""
+        >
+          Orders History
+        </h2>
+        <div
+          className="card card-shadow"
+        >
+          <div
+            className="table"
+          >
+            <table>
+              <thead
+                className=""
+              >
+                <tr>
+                  <th>
+                    Order Id
+                  </th>
+                  <th>
+                    Ordered Items
+                  </th>
+                  <th>
+                    Total Amount
+                  </th>
+                  <th>
+                    Date Ordered
+                  </th>
+                  <th>
+                    Order Status
+                  </th>
+                  <th>
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody />
+            </table>
+          </div>
+        </div>
+        <div
+          className="text-center contain-50"
+        >
+          <div
+            className="response-area"
+          />
+          <div
+            className="hide loader"
+          >
+            <i
+              className="fa fa-spinner fa-spin"
+            />
+          </div>
+        </div>
+        <div>
+          <button
+            className="btn btn-primary btn-rounded"
+            type="button"
+          >
+            load more
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</div>
+`;

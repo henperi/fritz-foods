@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Errors component Test Suite should return a main error list item 1`] = `<div />`;

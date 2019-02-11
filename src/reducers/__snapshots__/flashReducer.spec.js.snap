@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flashReducer should return the default state if no action is specified 1`] = `
+Object {
+  "flashType": "success",
+  "message": "",
+  "showFlash": false,
+  "title": "",
+}
+`;
+
+exports[`flashReducer should update the state and REMOVE_FLASH when type is SET_MENU and payload is specified 1`] = `
+Object {
+  "showFlash": false,
+}
+`;
+
+exports[`flashReducer should update the state and SHOW_FLASH when type is SET_MENU and payload is specified 1`] = `
+Object {
+  "flashType": "success",
+  "message": "new message",
+  "showFlash": true,
+  "title": "new title",
+}
+`;

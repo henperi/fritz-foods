@@ -81,22 +81,10 @@ export class LandingPage extends Component {
               <div className="card text-center">
                 <h2>Wanna See Our Menu And All Food Items?</h2>
                 <p>
-                  <a href="users/foods.html" className="btn btn-blue btn-rounded btn-bg">
+                  <Link to="/users/foods" className="btn btn-blue btn-rounded btn-bg">
                     View Menu
-                  </a>
+                  </Link>
                 </p>
-              </div>
-              <div className="text-center">
-                {!user.isAuthenticated && (
-                  <div>
-                    <Link to="/signin" className="btn btn-green">
-                      Login Now
-                    </Link>
-                    <Link to="/signup" className="btn btn-blue">
-                      Signup Now
-                    </Link>
-                  </div>
-                )}
               </div>
             </section>
 
@@ -112,7 +100,7 @@ export class LandingPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   featuredMenu: state.featuredMenu,
   cart: state.cart,
   user: state.user,

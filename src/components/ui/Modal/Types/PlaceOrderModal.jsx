@@ -10,7 +10,7 @@ export const PlaceOrderModal = props => (
         <h3>Are you sure you want to order all the items in cart?</h3>
         <button
           onClick={() => {
-            props.placeOrder(props.cart, props.handleModal);
+            props.placeOrder(props.cart, props.handleModal, props.user);
           }}
           type="button"
           className="btn btn-green btn-rounded btn-bg close-button "
@@ -31,6 +31,7 @@ export const PlaceOrderModal = props => (
 
 const mapStateToProps = state => ({
   cart: state.cart,
+  user: state.user,
 });
 
 export default connect(
