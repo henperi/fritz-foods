@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/react-in-jsx-scope */
 import { shallow } from 'enzyme';
-import { OrderHistory, mapStateToProps } from './OrdersHistory';
+import { OrderItems, mapStateToProps } from './OrderedItems';
 
 describe('rendering', () => {
   let wrapper;
@@ -10,12 +10,17 @@ describe('rendering', () => {
   let mockedSignUpState;
   beforeEach(() => {
     props = {
-      getOrderHistory: jest.fn(),
+      getOrderedItems: jest.fn(),
       history: {
         push: jest.fn(),
       },
+      match: {
+        params: {
+          orderId: '',
+        },
+      },
       order: {
-        orderHistory: [],
+        orderedItems: [],
       },
       user: {
         isAuthenticated: true,
@@ -24,14 +29,14 @@ describe('rendering', () => {
   });
 
   it('invokes `componentDidMount` when mounted', () => {
-    const spy = jest.spyOn(OrderHistory.prototype, 'componentDidMount');
-    wrapper = shallow(<OrderHistory {...props} />);
+    const spy = jest.spyOn(OrderItems.prototype, 'componentDidMount');
+    wrapper = shallow(<OrderItems {...props} />);
     wrapper.instance().componentDidMount();
     expect(spy).toHaveBeenCalled();
   });
 
   it('should render the component', () => {
-    wrapper = shallow(<OrderHistory {...props} />);
+    wrapper = shallow(<OrderItems {...props} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.length).toBe(1);
   });
@@ -42,7 +47,7 @@ describe('rendering', () => {
   });
   // it('should test the onSubmit function', () => {
   //   const fakeEvent = { preventDefault: () => console.log('preventDefault') };
-  //   wrapper = shallow(<OrderHistory {...props} />);
+  //   wrapper = shallow(<OrderItems {...props} />);
   //   const signupForm = wrapper.find('form');
   //   signupForm.simulate('submit', fakeEvent);
   //   const signupUser = jest.fn(mockedSignUpState);

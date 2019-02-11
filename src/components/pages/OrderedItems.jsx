@@ -91,7 +91,7 @@ export class OrderItems extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   order: state.order,
   user: state.user,
 });
