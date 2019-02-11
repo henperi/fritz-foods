@@ -43,23 +43,25 @@ exports[`The Header Component Test Suite should render the <OrderHistory /> Comp
       >
         Signup
       </NavLink>
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="btn btn-green"
-        to="/users/my-cart"
+      <div
+        className="dropdown"
       >
-        My Cart
-        <i
-          className="fa fa-shopping-cart"
-        />
-         
-        <span
-          className="count cart-count"
+        <NavLink
+          activeClassName="active"
+          aria-current="page"
+          to="/users/my-cart"
         >
-          0
-        </span>
-      </NavLink>
+          <i
+            className="fa fa-shopping-cart"
+          />
+           
+          <span
+            className="count cart-count"
+          >
+            0
+          </span>
+        </NavLink>
+      </div>
       <a
         className="icon"
         href="/"
